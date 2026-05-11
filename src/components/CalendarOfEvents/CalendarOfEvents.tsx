@@ -6,12 +6,9 @@ import {
   eachDayOfInterval,
   isSameDay,
   format,
-  isSameMonth,
   addMonths,
   subMonths,
-  parse,
   startOfToday,
-  add
 } from 'date-fns';
 import { uk } from 'date-fns/locale';
 import stylesCalendarOfEvents from './CalendarOfEvents.module.scss';
@@ -21,7 +18,6 @@ import cn from 'classNames';
 const CalendarOfEvents = () => {
   const today = startOfToday();
   const [activeDate, setActiveDate] = useState(today);
-  const [currentMonth, setCurrentMonth] = useState(format(today, 'MMM-yyyy'));
 
   const days = useMemo(() => {
     const start = startOfWeek(startOfMonth(activeDate), { weekStartsOn: 1 });
@@ -37,14 +33,6 @@ const CalendarOfEvents = () => {
   const monthName = format(activeDate, 'LLLL', { locale: uk });
   const capitalizedMonth = monthName.charAt(0).toUpperCase() + monthName.slice(1);
 
-  // function nextMonth() {
-  //   const firstDayCurrentMonth = parse(currentMonth, 'MMM-yyyy', new Date());
-  //   const firstDayNextMonth = add(firstDayCurrentMonth, { months: 1 })
-
-  //   setCurrentMonth(format(firstDayNextMonth, 'MMM-yyyy'));
-  // }
-
-  console.log(currentMonth);
   console.log(activeDate);
 
   return (
@@ -64,7 +52,6 @@ const CalendarOfEvents = () => {
 
         <div className={stylesCalendarOfEvents.calendar__calendarGrid}>
           {days.map(day => {
-            // Шукаємо, чи є подія на цей конкретний день
             const dayEvents = events.filter(event =>
               isSameDay(new Date(event.date), day)
             );
@@ -72,7 +59,9 @@ const CalendarOfEvents = () => {
             console.log(dayEvents);
 
             return (
-              <div key={day.toString()} className={stylesCalendarOfEvents.calendar__dayCell}>
+              <div key={day.toString()} className={cn(stylesCalendarOfEvents.calendar__dayCell, {
+                [stylesCalendarOfEvents.calendar__dayCell_hasEvent]: dayEvents.length > 0
+              })}>
                 <span>{day.getDate()}</span>
               </div>
             );

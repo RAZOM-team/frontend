@@ -11,5 +11,9 @@
     display: inline;
     width: 22px;
     height: 24px;
+
+    &_hasEvent {
+      background-color: red;
+    }
   }
 }

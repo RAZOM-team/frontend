@@ -1,6 +1,4 @@
 .header {
-  display: none;
-
   background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)),
   url('../../assets/background_header.png');
   background-position: center;
@@ -42,7 +40,7 @@
     purple: #cb6ce6);
 
   @each $name, $value in $colors {
-    &__grapheme_#{$name} {
+    &__grapheme_#{('' + $name)} {
       color: $value;
     }
   }

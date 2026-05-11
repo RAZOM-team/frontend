@@ -1,0 +1,59 @@
+.topBar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-inline: 28px;
+  padding-block: 76px 56px;
+
+  &__logoReference {
+    height: 44px;
+    width: 44px;
+  }
+
+  &__logo {
+    width: 44px;
+    height: 44px;
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 16px;
+  }
+
+  &__help {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 44px 44px;
+    box-sizing: border-box;
+    width: 44px;
+    height: 44px;
+    border: none;
+    background-color: transparent;
+  }
+
+  &__UAlang, &__burger {
+    background-position: center;
+    background-repeat: no-repeat;
+    box-sizing: content-box;
+    width: 24px;
+    height: 24px;
+    padding: 12px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+  }
+  
+  &__help {
+    background-image: url('../../assets/Donate.svg');
+  }
+
+  &__UAlang {
+    background-image: url('../../assets/UA.svg');
+  }
+
+  &__burger {
+    background-image: url('../../assets/Menu-without-border.svg');
+  }
+}

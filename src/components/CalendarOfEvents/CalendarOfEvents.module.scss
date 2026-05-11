@@ -1,0 +1,15 @@
+.calendar {
+  &__calendarGrid {
+    width: 361px;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    margin: 0 auto;
+    gap: 28px;
+  }
+  
+  &__dayCell {
+    display: inline;
+    width: 22px;
+    height: 24px;
+  }
+}

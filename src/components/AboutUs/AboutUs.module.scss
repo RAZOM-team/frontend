@@ -1,0 +1,66 @@
+.aboutUs {
+  &__title {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 110%;
+    letter-spacing: 0;
+    margin-block: 64px 24px;
+    color: #212529;
+  }
+
+  &__describe {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 140%;
+    letter-spacing: 0;
+    color: #212529;
+    margin-inline: 16px;
+  }
+
+  &__toSupport {
+    display: block;
+    margin-top: 24px;
+    margin-inline: 16px
+    ;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)),
+    url('../../assets/ilustraite-image.png');
+    text-decoration: none;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    text-decoration: none;
+    width: auto;
+    height: 300px;
+    border-radius: 4px;
+    position: relative;
+  }
+
+  &__volunteerHeading {
+    padding-top: 24px;
+    margin-inline: 24px;
+    
+    &__1, &__2 {
+      padding-bottom: 16px;
+      color: #f8f9fa;
+      text-align: start;
+      font-family: 'Manrope', sans-serif;
+      font-weight: 400;
+      font-size: 24px;
+      line-height: 120%;
+      letter-spacing: 0;
+    }
+  }
+
+  &__donateImage {
+    width: 40px;
+    height: 40px;
+    margin-left: 70px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin-right: 70px;
+    margin-bottom: 70px;
+  }
+}

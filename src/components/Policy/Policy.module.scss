@@ -1,0 +1,27 @@
+.policy {
+  background-color: #f8f9fa;
+
+  & > div {
+    text-align: left;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    margin-inline: 16px;
+    padding-top: 51px;
+    padding-bottom: 4px;
+  }
+
+  &__copyright,
+  &__year,
+  &__link {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 140%;
+    letter-spacing: 0;
+    color: #495057;
+  }
+
+  &__link {
+    text-align: right;
+  }
+}

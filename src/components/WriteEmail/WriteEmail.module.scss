@@ -1,0 +1,46 @@
+.writeEmail {
+  &__container {
+    display: block;
+    border: 1px solid #ced4da;
+    position: relative;
+    min-width: 297px;
+    max-width: 361px;
+    height: 305px;
+    margin: 0 auto 40px;
+    border-radius: 8px;
+    text-decoration: none;
+    padding-inline: 24px;
+    box-sizing: border-box;
+  }
+
+  &__title {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 120%;
+    letter-spacing: 0;
+    color: #212529;
+    margin-block: 24px 16px;
+    text-align: start;
+  }
+
+  &__description {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 140%;
+    letter-spacing: 0;
+    color: #212529;
+    text-align: start;
+  }
+
+  &__icon {
+    width: 39px;
+    height: 39px;
+    margin-right: 70px;
+    margin-bottom: 70px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
+}

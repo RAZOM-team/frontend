@@ -1,19 +1,116 @@
 .calendar {
-  &__calendarGrid {
-    width: 361px;
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
+  &__title {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 110%;
+    letter-spacing: 0;
+    margin-block: 64px 24px;
+    color: #212529;
+  }
+
+  &__topics {
+    padding: 0 32px;
+  }
+
+  &__slide {
+    width: fit-content !important; // use important to change rules from library
+  }
+
+  &__category {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 140%;
+    letter-spacing: 0;
+    padding: 11px 12px;
+    background-color: #fff;
+    border: none;
+    border: 1px #dee2e6 solid;
+    border-radius: 8px;
+    color: #495057;
+  }
+
+  &__year {
+    margin-block: 30px;
+  }
+
+  &__crumbs {
+    width: fit-content;
     margin: 0 auto;
-    gap: 28px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 8px;
+  }
+
+  &__month {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 400;
+    font-size: 28px;
+    line-height: 120%;
+    letter-spacing: 0;
+    color: #212529;
+  }
+
+  &__move {
+    height: 24px;
+    width: 24px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: transparent;
+    border: none;
+    padding: 10px;
+    margin-inline: 18px;
   }
   
+  &__back {
+    background-image: url('../../assets/icons/Arrow-left-without-border.svg');
+  }
+  
+  &__forward {
+    background-image: url('../../assets/icons/Arrow-right-without-border.svg');
+  }
+
+  &__calendarGrid {
+    gap: 28px;
+    column-gap: 22px;
+    margin-bottom: 98.43px;
+  }
+
+  &__weekDays {
+    gap: 26px;
+    padding-bottom: 20px;
+  }
+
+  &__weekDay {
+    font-family: 'Manrope', sans-serif;
+    color: #6c757d;
+  }
+
+  &__calendarGrid, &__weekDays {
+    width: fit-content;
+    display: grid;
+    grid-template-columns: repeat(7, fit-content(24px));
+    margin: 0 auto;
+  }
+
   &__dayCell {
-    display: inline;
+    margin: 0 auto;
     width: 22px;
     height: 24px;
+    color: #212529;
 
     &_hasEvent {
+      color: #fff;
       background-color: red;
+      border-radius: 30%;
+    }
+  }
+
+  &__day {
+    &_outside {
+      color: #ced4da;
     }
   }
 }

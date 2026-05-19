@@ -1,0 +1,61 @@
+.ourProjects {
+  &__title {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 110%;
+    letter-spacing: 0;
+    color: #212529;
+    margin-block: 40px 47.5px;
+  }
+
+  &__deteilsWrapper {
+    // display: flex;
+    // flex-direction: column;
+    // gap: 16px;
+    margin: 0 16px;
+  }
+
+  &__devideLine {
+    width: 100%;
+    height: 1px;
+    background-color: #dee2e6;
+    margin-block: 16px;
+  }
+
+  &__nameWrapper {
+    margin: 16px;
+
+  }
+
+  &__name {
+    font-family: 'Manrope', sans-serif;
+    text-align: start;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 120%;
+    letter-spacing: 0;
+    color: #212529;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    span {
+      display: block;
+      background-image: url('../../assets/icons/Plus.svg');
+      background-repeat: no-repeat;
+      background-position: center;
+      width: 24px;
+      height: 24px;
+      padding: 10px;
+    }
+  }
+}
+
+summary {
+  list-style: none;
+}
+
+summary::-webkit-details-marker {
+  display: none;
+}

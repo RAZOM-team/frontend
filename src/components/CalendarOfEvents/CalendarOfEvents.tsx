@@ -14,7 +14,7 @@ import {
 import { enUS, uk, de } from 'date-fns/locale';
 import stylesCalendarOfEvents from './CalendarOfEvents.module.scss';
 import { useMemo, useState } from 'react';
-import cn from 'classNames';
+import cn from 'classnames';
 import { useTranslation } from 'react-i18next';
 import useLang from '../TopBar/useLang';
 import { Swiper, SwiperSlide } from 'swiper/react';

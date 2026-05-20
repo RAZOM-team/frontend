@@ -2,7 +2,7 @@ import { useState } from 'react';
 import type { Swiper as SwiperType } from 'swiper';
 import stylesHeartRazom from './HeartRazom.module.scss';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import cn from 'classNames';
+import cn from 'classnames';
 import 'swiper/css';
 
 const HeartRazom = () => {

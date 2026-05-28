@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import Razom from '../RAZOM/Razom';
 import TopBar from '../TopBar/TopBar';
 import headerStyles from './HeaderStyles.module.scss';
@@ -17,7 +18,11 @@ const Header = () => {
 
         <h2 className={headerStyles.header__title}>{t('headerSubtitle')}</h2>
 
-        <button className={headerStyles.header__join}>{t('headerJoin')}</button>
+        <Link to="/personalInfo">
+          <button className={headerStyles.header__join}>
+            {t('headerJoin')}
+          </button>
+        </Link>
       </header>
     </>
   );

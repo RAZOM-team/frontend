@@ -1,29 +1,22 @@
-// import { useState } from 'react'
-import './App.css'
-import AboutUs from './components/AboutUs/AboutUs'
-import CalendarOfEvents from './components/CalendarOfEvents/CalendarOfEvents'
-import Footer from './components/Footer/Footer'
-import Header from './components/Header/Header'
-import HeartRazom from './components/HeartRazom/HeartRazom'
-import OurProjects from './components/OurProjects/OurProjects'
+import { Route, Routes } from 'react-router-dom';
+import './App.css';
+import MainPage from './MainPage/MainPage';
+import RegisterForm from './components/RegisterForm/RegisterForm';
+import Personalization from './components/Personalization/Personalization';
 
 function App() {
   // const [count, setCount] = useState(0)
 
   return (
     <>
-      <Header />
+      <Routes>
+        <Route path='/' element={<MainPage />} />
 
-      <main>
-        <CalendarOfEvents />
-        <AboutUs />
-        <OurProjects />
-        <HeartRazom />
-      </main>
-
-      <Footer />
+        <Route path='/personalization' element={<Personalization />} />
+        <Route path='/personalInfo' element={<RegisterForm />} />
+      </Routes>
     </>
-  )
+  );
 }
 
 export default App

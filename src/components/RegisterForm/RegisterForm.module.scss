@@ -1,0 +1,93 @@
+.registerForm {
+
+  &__levelLine {
+    margin: 36px auto 16px;
+    width: 108px;
+    height: 2px;
+    border-radius: 2px;
+    background-color: #e9ecef;
+  }
+
+  &__passedPartsLevel {
+    border-radius: 2px;
+    width: 27px;
+    height: 2px;
+    background-color: #7eda57;
+  }
+
+  &__title {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 110%;
+    letter-spacing: 0;
+    color: #212529;
+  }
+
+  &__littleTitle {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 140%;
+    letter-spacing: 0;
+    color: #495057;
+    margin-block: 16px 24px;
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    margin: 0 16px;
+    position: relative;
+  }
+
+  &__label {
+    text-align: left;
+    font-family: 'Manrope', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 140%;
+    letter-spacing: 0;
+    color: #212529;
+  }
+
+  &__input {
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #dee2e6;
+    margin-block: 8px 16px;
+
+    padding: 12px;
+    box-sizing: border-box;
+
+    &::placeholder {
+      font-family: 'Manrope', sans-serif;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 140%;
+      letter-spacing: 0;
+      color: #6c757d;
+    }
+  }
+
+  &__further {
+    box-sizing: border-box;
+    height: 49px;
+    margin: 24px 16px 32px;
+    width: -webkit-fill-available;
+    background-color: #e9ecef;
+    padding: 12px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    text-align: center;
+
+    font-family: 'Manrope', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 140%;
+    letter-spacing: 0;
+    color: #6c757d;
+    border-radius: 4px;
+  }
+}

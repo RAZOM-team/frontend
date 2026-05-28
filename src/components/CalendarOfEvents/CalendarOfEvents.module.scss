@@ -63,18 +63,16 @@
     padding: 10px;
     margin-inline: 18px;
   }
-  
+
   &__back {
     background-image: url('../../assets/icons/Arrow-left-without-border.svg');
   }
-  
+
   &__forward {
     background-image: url('../../assets/icons/Arrow-right-without-border.svg');
   }
 
   &__calendarGrid {
-    gap: 28px;
-    column-gap: 22px;
     margin-bottom: 98.43px;
   }
 
@@ -86,13 +84,18 @@
   &__weekDay {
     font-family: 'Manrope', sans-serif;
     color: #6c757d;
+    width: 22px;
+    height: 24px;
   }
 
-  &__calendarGrid, &__weekDays {
+  &__calendarGrid,
+  &__weekDays {
     width: fit-content;
     display: grid;
     grid-template-columns: repeat(7, fit-content(24px));
     margin: 0 auto;
+    gap: 28px;
+    column-gap: 28px;
   }
 
   &__dayCell {

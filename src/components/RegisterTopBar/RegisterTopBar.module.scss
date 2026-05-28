@@ -1,0 +1,32 @@
+.registerTopBar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-inline: 16px;
+  margin-top: 18px;
+
+  &__backButton {
+    display: flex;
+    align-items: center;
+  }
+
+  &__backIcon {
+    margin-right: 10px;
+  }
+
+  &__close,
+  &__backIcon {
+    width: 24px;
+    height: 24px;
+  }
+
+  &__back {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 140%;
+    color: #495057;
+  }
+}
+

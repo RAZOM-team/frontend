@@ -9,11 +9,12 @@ const AboutUs = () => {
     <>
       <section className={stylesAboutUs.aboutUs}>
         <h2 className={stylesAboutUs.aboutUs__title}>{t('aboutTitle')}</h2>
-          
+
         <p className={stylesAboutUs.aboutUs__describe}>{t('aboutText')}</p>
 
         <a
-          href="#" className={stylesAboutUs.aboutUs__toSupport}
+          href="#"
+          className={stylesAboutUs.aboutUs__toSupport}
           aria-hidden="true"
           role="presentation"
           tabIndex={-1}
@@ -23,7 +24,7 @@ const AboutUs = () => {
             <h3 className={stylesAboutUs.aboutUs__volunteerHeading__2}>{t('volunteerLine2')}</h3>
           </div>
 
-            <img src={donateImage} alt="" className={stylesAboutUs.aboutUs__donateImage}/>
+          <img src={donateImage} alt="" className={stylesAboutUs.aboutUs__donateImage} />
         </a>
       </section>
     </>

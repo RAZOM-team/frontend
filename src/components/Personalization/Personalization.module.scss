@@ -1,0 +1,111 @@
+.personalization {
+  &__title {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 110%;
+    letter-spacing: 0;
+    color: #212529;
+  }
+
+  &__littleTitle {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 140%;
+    letter-spacing: 0;
+    color: #495057;
+    margin-block: 16px 24px;
+  }
+
+  &__form {
+    margin: 0 16px;
+    text-align: left;
+  }
+
+  &__label {
+    text-align: left;
+    font-family: "Manrope", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 140%;
+    letter-spacing: 0;
+    color: #212529;
+  }
+
+  &__input {
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #dee2e6;
+    margin-block: 8px 16px;
+
+    padding: 12px;
+    box-sizing: border-box;
+
+    &::placeholder {
+      font-family: 'Manrope', sans-serif;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 140%;
+      letter-spacing: 0;
+      color: #6c757d;
+    }
+  }
+
+  &__realInput {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  &__condition {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: absolute;
+    bottom: 105px;
+    margin: 0 16px;
+  }
+
+  &__buttonAxcept {
+    margin-inline: 16px;
+    box-sizing: border-box;
+    width: 28px;
+    height: 28px;
+    border: 1px solid #495057;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &__true {
+      border: 1px solid #07029d;
+    }
+  }
+
+  &__axceptedIcon {
+    display: block;
+    width: auto;
+    height: auto;
+  }
+
+  &__agreement {
+    text-align: left;
+    font-family: 'Manrope', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 140%;
+    letter-spacing: 0;
+    color: #212529;
+    // width: min-content;
+
+    &__confidential {
+      text-decoration: underline;
+    }
+  }
+}

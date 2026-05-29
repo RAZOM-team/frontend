@@ -1,19 +1,15 @@
 import style from './RegisterForm.module.scss';
 import RegisterTopBar from "../RegisterTopBar/RegisterTopBar";
-import { Link } from 'react-router-dom';
+import JoinTitle from '../JoinTitle/JoinTitle';
+import FurtherButton from '../FurtherButton/FurtherButton';
 
 const RegisterForm = () => {
   return (
     <>
       <div className={style.registerForm}>
-        <RegisterTopBar />
+        <RegisterTopBar fraction={27} />
 
-        <div className={style.registerForm__levelLine}>
-          <div className={style.registerForm__passedPartsLevel}></div>
-        </div>
-
-        <h2 className={style.registerForm__title}>Приєднатися як<br /> учасник</h2>
-
+        <JoinTitle />
         <div className={style.registerForm__littleTitle}>Час нам познайомитися!</div>
 
         <form className={style.registerForm__form}>
@@ -62,12 +58,8 @@ const RegisterForm = () => {
           </label>
 
         </form>
-        
-        <Link to={'/personalization'}>
-          <button className={style.registerForm__further}>
-            Далі
-          </button>
-        </Link>
+
+        <FurtherButton pathPart='personalization' />
       </div>
     </>
   );

@@ -28,5 +28,28 @@
     line-height: 140%;
     color: #495057;
   }
-}
 
+  &__levelLine {
+    margin: 36px auto 16px;
+    width: 108px;
+    height: 2px;
+    border-radius: 2px;
+    background-color: #e9ecef;
+  }
+
+  &__passedPartsLevel {
+    border-radius: 2px;
+    width: 27px;
+    height: 2px;
+    background-color: #7eda57;
+    transition: width 2s ease-in-out;
+
+    &__twoThird {
+      width: 81px;
+    }
+
+    &__full {
+      width: 108px;
+    }
+  }
+}

@@ -1,29 +1,45 @@
+import cn from 'classnames';
 import styleNavigation from './Navigation.module.scss';
+import { HashLink } from 'react-router-hash-link';
 
-const Navigation = () => {
+type Props = {
+  openedMenu?: boolean;
+}
+
+const Navigation = ({ openedMenu }: Props) => {
   return (
     <>
-      <nav className={styleNavigation.navigation}>
+      <nav className={cn(styleNavigation.navigation, 
+        openedMenu && styleNavigation.navigation__opened,
+      )}>
 
         <div>
-          <ul className={styleNavigation.navigation__list}>
+          <ul className={cn(styleNavigation.navigation__list, 
+            openedMenu && styleNavigation.navigation__blockList
+          )}>
             <li>
-              <a href="#">Головна</a></li>
-            <li>
-              <a href="#">Про нас</a></li>
-            <li>
-              <a href="#">Новини</a></li>
-            <li>
-              <a href="#">Проєкти</a></li>
-            <li>
-              <a href="">Календар подій</a>
+              <HashLink smooth to="/#header">Головна</HashLink>
             </li>
             <li>
-              <a href="#">Партнери</a></li>
+              <HashLink smooth to="/#about-us">Про нас</HashLink>
+            </li>
             <li>
-              <a href="#">Контакти</a></li>
+              <HashLink smooth to="#">Новини</HashLink>
+            </li>
             <li>
-              <a href="#">Підтримати RAZOM!</a>
+              <HashLink smooth to="/#projects">Проєкти</HashLink>
+            </li>
+            <li>
+              <HashLink smooth to="/#calendar">Календар подій</HashLink>
+            </li>
+            <li>
+              <HashLink smooth to="/#partners">Партнери</HashLink>
+            </li>
+            <li>
+              <HashLink smooth to="/#contacts">Контакти</HashLink>
+            </li>
+            <li>
+              <HashLink smooth to="#">Підтримати RAZOM!</HashLink>
             </li>
           </ul>
         </div>

@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom";
 import RegisterTopBar from "../RegisterTopBar/RegisterTopBar";
 import styles from './RegistrationSuccess.module.scss';
-import image from '../../assets/events-image.png';
+import donateImage from '../../assets/Vector.svg';
+import FurtherButton from "../FurtherButton/FurtherButton";
 
 const RegistrationSuccess = () => {
   return (
@@ -10,17 +11,19 @@ const RegistrationSuccess = () => {
         <RegisterTopBar fraction={108} />
 
         <h2 className={styles.registrationSuccess__title}>Вітаємо! Ви тепер частинка RAZOM!</h2>
-        <div>Ми надішлемо підтвердження на цей імейл:</div>
-        <div>example@mail.com</div>
+        <div className={styles.registrationSuccess__action} >Ми надішлемо підтвердження на цей імейл:</div>
+        <div className={styles.registrationSuccess__email}>example@mail.com</div>
 
-        <Link to='/calendar'>
-          <div className={styles.aboutUs__volunteerHeading}>
-            <h3 className={styles.aboutUs__volunteerHeading__1}>Бажаєте долучитися до наступної події?</h3>
-            <h3 className={styles.aboutUs__volunteerHeading__2}>Тепер ви маєте доступ до усіх тематичних подій, консультацій та підтримки ЛГБТКІ+ ком’юніті! </h3>
+        <Link to='/calendar' className={styles.registrationSuccess__toCalendar}>
+          <div className={styles.registrationSuccess__volunteerHeading}>
+            <h3 className={styles.registrationSuccess__volunteerHeading__1}>Бажаєте долучитися до наступної події?</h3>
+            <h3 className={styles.registrationSuccess__volunteerHeading__2}>Тепер ви маєте доступ до усіх тематичних подій, консультацій та підтримки ЛГБТКІ+ ком’юніті! </h3>
           </div>
 
-          <img src={image} alt="" className={styles.aboutUs__donateImage} />
+          <img src={donateImage} alt="" className={styles.registrationSuccess__donateImage} />
         </Link>
+
+        <FurtherButton pathPart='' />
       </div>
     </>
   );

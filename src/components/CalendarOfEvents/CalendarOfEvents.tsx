@@ -39,7 +39,7 @@ const CalendarOfEvents = () => {
 
   const weekDays = Array.from({ length: 7 }, (_, i) =>
     format(new Date(2023, 0, i + 1), 'EEEEEE', { locale })
-  ) ;
+  );
 
   const days = useMemo(() => {
     const start = startOfWeek(startOfMonth(activeDate), { weekStartsOn: 1 });
@@ -55,8 +55,10 @@ const CalendarOfEvents = () => {
   const monthName = format(activeDate, 'LLLL', { locale });
   const capitalizedMonth = monthName.charAt(0).toUpperCase() + monthName.slice(1);
   const currentMonthStart = startOfMonth(activeDate);
+  const [selectedDay, setSelectedDay] = useState<string>('');
 
   console.log(activeDate);
+  console.log(selectedDay);
 
   return (
     <>
@@ -85,7 +87,7 @@ const CalendarOfEvents = () => {
             <SwiperSlide className={stylesCalendarOfEvents.calendar__slide}>
               <button className={stylesCalendarOfEvents.calendar__category}>{t('categoryActivism')}</button>
             </SwiperSlide>
-            
+
             <SwiperSlide className={stylesCalendarOfEvents.calendar__slide}>
               <button className={stylesCalendarOfEvents.calendar__category}>{t('categoryCultural')}</button>
             </SwiperSlide>
@@ -124,13 +126,15 @@ const CalendarOfEvents = () => {
             const isCurrentMonth = isSameMonth(day, currentMonthStart);
 
             return (
-              <div key={day.toString()} className={cn(stylesCalendarOfEvents.calendar__dayCell, {
-                [stylesCalendarOfEvents.calendar__dayCell_hasEvent]: dayEvents.length > 0
-              })}>
+              <div key={day.toString()} className={cn(stylesCalendarOfEvents.calendar__dayCell,
+                day.toString() === selectedDay && stylesCalendarOfEvents.calendar__dayCell_selected, {
+                  [stylesCalendarOfEvents.calendar__dayCell_hasEvent]: dayEvents.length > 0
+                })}>
                 <span
+                  onClick={() => setSelectedDay(day.toString())}
                   className={cn(
                     stylesCalendarOfEvents.calendar__day,
-                    !isCurrentMonth && stylesCalendarOfEvents.calendar__day_outside
+                    !isCurrentMonth && stylesCalendarOfEvents.calendar__day_outside,
                   )}
                 >{day.getDate()}</span>
               </div>

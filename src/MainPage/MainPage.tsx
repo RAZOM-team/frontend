@@ -11,10 +11,19 @@ const MainPage = () => {
       <Header />
 
       <main>
-        <CalendarOfEvents />
+        <div id="calendar">
+          <CalendarOfEvents />
+        </div>
+
         <AboutUs />
-        <OurProjects />
-        <HeartRazom />
+
+        <div id="projects">
+          <OurProjects />
+        </div>
+
+        <div id="partners">
+          <HeartRazom />
+        </div>
       </main>
 
       <Footer />

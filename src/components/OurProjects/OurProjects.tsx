@@ -3,7 +3,6 @@ import stylesOurProjects from './OurProjects.module.scss';
 const OurProjects = () => {
   return (
     <>
-
       <section className={stylesOurProjects.ourProjects}>
         <h1 className={stylesOurProjects.ourProjects__title}>Наші проєкти</h1>
 

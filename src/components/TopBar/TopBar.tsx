@@ -1,11 +1,18 @@
 import topBarStyles from './TopBar.module.scss';
 import logo from '../../assets/razom-logo.svg';
 import useLang from './useLang';
+import type { Dispatch, SetStateAction } from 'react';
+import cn from 'classnames';
 
-const TopBar = () => {
+type Props = {
+  setIsOpenMenu: Dispatch<SetStateAction<boolean>>;
+  isOpenMenu: boolean;
+}
+
+const TopBar = ({setIsOpenMenu, isOpenMenu = false}: Props ) => {
   const { language, setLanguage } = useLang();
 
-  const changeLang = () => { 
+  const changeLang = () => {
     if (language === 'en') {
       setLanguage('uk');
     } else if (language === 'uk') {
@@ -15,6 +22,8 @@ const TopBar = () => {
     }
   };
 
+  console.log(isOpenMenu);
+
   return (
     <>
       <div className={topBarStyles.topBar}>
@@ -23,9 +32,18 @@ const TopBar = () => {
         </a>
 
         <div className={topBarStyles.topBar__wrapper}>
-          <button className={topBarStyles.topBar__help}></button>
-          <button className={topBarStyles.topBar__UAlang} onClick={() => changeLang()}></button>
-          <button className={topBarStyles.topBar__burger}></button>
+          <button className={cn(topBarStyles.topBar__help,
+            isOpenMenu && topBarStyles.topBar__darkHelp,
+          )}></button>
+          <button className={cn(topBarStyles.topBar__UAlang,
+            isOpenMenu && topBarStyles.topBar__darkUAlang,
+          )} onClick={() => changeLang()}></button>
+          <button
+            className={cn(topBarStyles.topBar__burger,
+              isOpenMenu && topBarStyles.topBar__darkBurger,
+            )}
+            onClick={() => setIsOpenMenu((curr) => !curr)}>
+          </button>
         </div>
       </div>
     </>

@@ -8,7 +8,7 @@ import stylesFooter from './Footer.module.scss';
 const Footer = () => {
   return (
     <>
-      <footer className={stylesFooter.footer}>
+      <footer className={stylesFooter.footer}  id='contacts'>
         <h2 className={stylesFooter.footer__title}>Контактна форма</h2>
 
         <WriteEmail />

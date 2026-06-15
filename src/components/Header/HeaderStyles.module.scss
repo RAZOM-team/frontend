@@ -1,6 +1,6 @@
 .header {
   background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)),
-  url('../../assets/background_header.png');
+    url('../../assets/background_header.png');
   background-position: center;
   background-repeat: no-repeat;
   background-size: 180%;
@@ -8,13 +8,18 @@
   width: 100%;
 
   &__none {
+    pointer-events: none;
     position: relative;
   }
 
   &__nav {
     position: absolute;
-    width: 100%;
+    top: 0; // 🔥 Меню почнеться з самого верху екрана
+    left: 0;
+    right: 0;
+    z-index: 12;
     background-color: #f8f9fa;
+    pointer-events: all;
   }
 
   &__mainTitle {
@@ -47,34 +52,35 @@
     yellow: #ffdf59,
     green: #7Eda57,
     blue: #5271FF,
-    purple: #cb6ce6);
+    purple: #cb6ce6
+  );
 
-  @each $name, $value in $colors {
-    &__grapheme_#{('' + $name)} {
-      color: $value;
-    }
+@each $name, $value in $colors {
+  &__grapheme_#{('' + $name)} {
+    color: $value;
   }
+}
 
-  &__title {
-    font-family: 'Manrope', sans-serif;
-    margin-block: 56px 36px;
-    color: #f8f9fa;
-    font-weight: 400;
-    font-size: 24px;
-    line-height: 120%;
-    letter-spacing: 0;
-  }
+&__title {
+  font-family: 'Manrope', sans-serif;
+  margin-block: 56px 36px;
+  color: #f8f9fa;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 120%;
+  letter-spacing: 0;
+}
 
-  &__join {
-    color: #212529;
-    background-color: #7eda57;
-    padding: 12px 107px;
-    border: none;
-    border-radius: 8px;
-    font-family: 'Manrope', sans-serif;
-    font-weight: 400;
-    font-size: 18px;
-    line-height: 140%;
-    letter-spacing: 0;
-  }
+&__join {
+  color: #212529;
+  background-color: #7eda57;
+  padding: 12px 107px;
+  border: none;
+  border-radius: 8px;
+  font-family: 'Manrope', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 140%;
+  letter-spacing: 0;
+}
 }

@@ -3,13 +3,23 @@ import Razom from '../RAZOM/Razom';
 import TopBar from '../TopBar/TopBar';
 import headerStyles from './HeaderStyles.module.scss';
 import { useTranslation } from 'react-i18next';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import cn from 'classnames';
 import Navigation from '../Navigation/Navigation';
 
 const Header = () => {
   const { t } = useTranslation();
   const [isOpenMenu, setIsOpenMenu] = useState<boolean>(false);
+
+  useEffect(() => {
+    if (isOpenMenu) {
+      document.body.style.overflow = 'hidden';
+    }
+
+    return () => {
+      document.body.style.overflow = 'scroll';
+    }
+  }, [isOpenMenu])
 
   return (
     <>

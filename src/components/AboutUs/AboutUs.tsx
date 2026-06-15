@@ -1,6 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import stylesAboutUs from './AboutUs.module.scss';
 import donateImage from '../../assets/Vector.svg';
+import { Link } from 'react-router-dom';
 
 const AboutUs = () => {
   const { t } = useTranslation();
@@ -12,8 +13,8 @@ const AboutUs = () => {
 
         <p className={stylesAboutUs.aboutUs__describe}>{t('aboutText')}</p>
 
-        <a
-          href="#"
+        <Link
+          to="/getVolunteer"
           className={stylesAboutUs.aboutUs__toSupport}
           aria-hidden="true"
           role="presentation"
@@ -25,7 +26,7 @@ const AboutUs = () => {
           </div>
 
           <img src={donateImage} alt="" className={stylesAboutUs.aboutUs__donateImage} />
-        </a>
+        </Link>
       </section>
     </>
   );

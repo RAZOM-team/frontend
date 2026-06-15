@@ -5,19 +5,72 @@ import RegisterForm from './components/RegisterForm/RegisterForm';
 import Personalization from './components/Personalization/Personalization';
 import RegistrationSuccess from './components/RegistrationSuccess/RegistrationSuccess';
 import RegisterToAnEvent from './components/RegisterToAnEvent/RegisterToAnEvent';
+import useDynamicState from './components/RegisterForm/useDynamicState';
+import VolunteerPersonalization from './components/VolunteerPersonalization/VolunteerPersonalization';
+import type { DataVolunteer } from './types/registration.ts';
+import type { DataMember } from './types/registration.ts';
+
 
 function App() {
-  // const [count, setCount] = useState(0)
+  const memberUser = useDynamicState<DataMember>(
+    {
+      userInfo: {
+        firstName: '',
+        lastName: '',
+        email: '',
+        cellNumber: ''
+      },
+      userResponses: {
+        interestsOfUser: ''
+      },
+    }
+  );
+
+  const volunteerUser = useDynamicState<DataVolunteer>(
+    {
+      userInfo: {
+        firstName: '',
+        lastName: '',
+        email: '',
+        cellNumber: ''
+      },
+      userResponses: {
+        yourHelp: '',
+        freeHours: '',
+        agreeWorkForFree: undefined,
+      },
+    }
+  );
 
   return (
     <>
       <Routes>
         <Route path='/' element={<MainPage />} />
-
         <Route path='/personalization' element={<Personalization />} />
-        <Route path='/personalInfo' element={<RegisterForm />} />
+        <Route
+          path='/personalInfo'
+          element={
+            <RegisterForm
+              joinAs='учасник'
+              status={'member'}
+              initialData={memberUser.userInfo}
+            />} />
         <Route path='/registration-success' element={<RegistrationSuccess />} />
         <Route path='/calendar' element={<RegisterToAnEvent />} />
+        <Route
+          path='/getVolunteer'
+          element={
+            <RegisterForm
+              joinAs='волонтер'
+              status={'volunteer'}
+              initialData={volunteerUser.userInfo}
+            />} />
+        <Route
+          path='/volunteerPersonalization'
+          element={
+            <VolunteerPersonalization
+              initialResponse={volunteerUser.userResponses}
+            />} />
       </Routes>
     </>
   );

@@ -5,11 +5,11 @@ import type { Dispatch, SetStateAction } from 'react';
 import cn from 'classnames';
 
 type Props = {
-  setIsOpenMenu: Dispatch<SetStateAction<boolean>>;
-  isOpenMenu: boolean;
+  setIsOpenMenu?: Dispatch<SetStateAction<boolean>>;
+  isOpenMenu?: boolean;
 }
 
-const TopBar = ({setIsOpenMenu, isOpenMenu = false}: Props ) => {
+const TopBar = ({ setIsOpenMenu, isOpenMenu = false }: Props) => {
   const { language, setLanguage } = useLang();
 
   const changeLang = () => {
@@ -19,6 +19,14 @@ const TopBar = ({setIsOpenMenu, isOpenMenu = false}: Props ) => {
       setLanguage('de');
     } else {
       setLanguage('en');
+    }
+  };
+
+  const openMenu = () => {
+    console.log('isClick');
+    
+    if (setIsOpenMenu) {
+      setIsOpenMenu((curr) => !curr)
     }
   };
 
@@ -32,18 +40,23 @@ const TopBar = ({setIsOpenMenu, isOpenMenu = false}: Props ) => {
         </a>
 
         <div className={topBarStyles.topBar__wrapper}>
+
           <button className={cn(topBarStyles.topBar__help,
             isOpenMenu && topBarStyles.topBar__darkHelp,
           )}></button>
+
           <button className={cn(topBarStyles.topBar__UAlang,
             isOpenMenu && topBarStyles.topBar__darkUAlang,
           )} onClick={() => changeLang()}></button>
+
           <button
-            className={cn(topBarStyles.topBar__burger,
+            className={cn(
+              topBarStyles.topBar__burger,
               isOpenMenu && topBarStyles.topBar__darkBurger,
             )}
-            onClick={() => setIsOpenMenu((curr) => !curr)}>
+            onClick={() => openMenu()}>
           </button>
+
         </div>
       </div>
     </>

@@ -9,12 +9,12 @@ type Props = {
 const Navigation = ({ openedMenu }: Props) => {
   return (
     <>
-      <nav className={cn(styleNavigation.navigation, 
+      <nav className={cn(styleNavigation.navigation,
         openedMenu && styleNavigation.navigation__opened,
       )}>
 
         <div>
-          <ul className={cn(styleNavigation.navigation__list, 
+          <ul className={cn(styleNavigation.navigation__list,
             openedMenu && styleNavigation.navigation__blockList
           )}>
             <li>

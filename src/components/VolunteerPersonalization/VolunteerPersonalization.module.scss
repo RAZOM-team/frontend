@@ -1,26 +1,18 @@
 .personalization {
-  &__title {
-    font-family: 'Manrope', sans-serif;
-    font-weight: 400;
-    font-size: 32px;
-    line-height: 110%;
-    letter-spacing: 0;
-    color: #212529;
-  }
-
-  &__littleTitle {
-    font-family: 'Manrope', sans-serif;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 140%;
-    letter-spacing: 0;
-    color: #495057;
-    margin-block: 16px 24px;
-  }
-
   &__form {
     margin: 0 16px;
     text-align: left;
+  }
+
+  &__radio {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    opacity: 0;
+    pointer-events: none;
   }
 
   &__label {
@@ -31,6 +23,15 @@
     line-height: 140%;
     letter-spacing: 0;
     color: #212529;
+
+    &__radio {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  &__wrapper {
+    margin-top: 8px;
   }
 
   &__input {
@@ -49,6 +50,21 @@
       line-height: 140%;
       letter-spacing: 0;
       color: #6c757d;
+    }
+  }
+
+  &__icon {
+    width: 44px;
+    height: 44px;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    &__default {
+      background-image: url('../../assets/icons/Radio-default.svg');
+    }
+
+    &__chosen {
+      background-image: url('../../assets/icons/RadioSelected.svg');
     }
   }
 }

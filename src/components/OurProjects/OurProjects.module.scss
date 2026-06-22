@@ -1,4 +1,14 @@
 .ourProjects {
+  &__nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 12;
+    background-color: #f8f9fa;
+    pointer-events: all;
+  }
+
   &__title {
     font-family: 'Manrope', sans-serif;
     font-weight: 400;
@@ -10,9 +20,6 @@
   }
 
   &__deteilsWrapper {
-    // display: flex;
-    // flex-direction: column;
-    // gap: 16px;
     margin: 0 16px;
   }
 
@@ -26,6 +33,13 @@
   &__nameWrapper {
     margin: 16px;
 
+    &[open] span {
+      display: block;
+      width: 24px;
+      height: 24px;
+      padding: 10px;
+      background-image: url('../../assets/icons/Minus.svg');
+    }
   }
 
   &__name {
@@ -49,6 +63,34 @@
       height: 24px;
       padding: 10px;
     }
+  }
+
+  &__info {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 140%;
+    letter-spacing: 0;
+    color: #495057;
+    text-align: left;
+    margin-top: 8px;
+  }
+
+  &__knowMore {
+    color: #212529;
+    background-color: #7eda57;
+    width: 100%;
+    height: 49px;
+    padding-block: 12px;
+    text-align: center;
+    border: none;
+    border-radius: 8px;
+    font-family: "Manrope", sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 140%;
+    letter-spacing: 0;
+    margin-top: 16px;
   }
 }
 

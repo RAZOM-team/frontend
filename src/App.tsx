@@ -9,6 +9,7 @@ import useDynamicState from './components/RegisterForm/useDynamicState';
 import VolunteerPersonalization from './components/VolunteerPersonalization/VolunteerPersonalization';
 import type { DataVolunteer } from './types/registration.ts';
 import type { DataMember } from './types/registration.ts';
+import OverviewPoject from './components/OverviewPoject/OverviewPoject.tsx';
 
 
 function App() {
@@ -71,6 +72,8 @@ function App() {
             <VolunteerPersonalization
               initialResponse={volunteerUser.userResponses}
             />} />
+        
+        <Route path='/overviewPoject' element={<OverviewPoject />} />
       </Routes>
     </>
   );

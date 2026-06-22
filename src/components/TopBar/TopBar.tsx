@@ -6,10 +6,10 @@ import cn from 'classnames';
 
 type Props = {
   setIsOpenMenu?: Dispatch<SetStateAction<boolean>>;
-  isOpenMenu?: boolean;
+  isBlack?: boolean;
 }
 
-const TopBar = ({ setIsOpenMenu, isOpenMenu = false }: Props) => {
+const TopBar = ({ setIsOpenMenu, isBlack = false }: Props) => {
   const { language, setLanguage } = useLang();
 
   const changeLang = () => {
@@ -24,13 +24,13 @@ const TopBar = ({ setIsOpenMenu, isOpenMenu = false }: Props) => {
 
   const openMenu = () => {
     console.log('isClick');
-    
+
     if (setIsOpenMenu) {
       setIsOpenMenu((curr) => !curr)
     }
   };
 
-  console.log(isOpenMenu);
+  console.log(isBlack);
 
   return (
     <>
@@ -42,17 +42,17 @@ const TopBar = ({ setIsOpenMenu, isOpenMenu = false }: Props) => {
         <div className={topBarStyles.topBar__wrapper}>
 
           <button className={cn(topBarStyles.topBar__help,
-            isOpenMenu && topBarStyles.topBar__darkHelp,
+            isBlack && topBarStyles.topBar__darkHelp,
           )}></button>
 
           <button className={cn(topBarStyles.topBar__UAlang,
-            isOpenMenu && topBarStyles.topBar__darkUAlang,
+            isBlack && topBarStyles.topBar__darkUAlang,
           )} onClick={() => changeLang()}></button>
 
           <button
             className={cn(
               topBarStyles.topBar__burger,
-              isOpenMenu && topBarStyles.topBar__darkBurger,
+              isBlack && topBarStyles.topBar__darkBurger,
             )}
             onClick={() => openMenu()}>
           </button>

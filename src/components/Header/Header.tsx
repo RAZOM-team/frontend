@@ -19,7 +19,7 @@ const Header = () => {
     return () => {
       document.body.style.overflow = 'scroll';
     }
-  }, [isOpenMenu])
+  }, [isOpenMenu]);
 
   return (
     <>
@@ -29,7 +29,7 @@ const Header = () => {
         {isOpenMenu &&
           <div className={headerStyles.header__nav}>
             <TopBar setIsOpenMenu={setIsOpenMenu} isBlack={isOpenMenu} />
-            <Navigation openedMenu={true} />
+            <Navigation openedMenu={true} setIsOpenMenu={setIsOpenMenu} />
           </div>
         }
 

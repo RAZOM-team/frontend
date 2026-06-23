@@ -1,12 +1,16 @@
 import cn from 'classnames';
 import styleNavigation from './Navigation.module.scss';
 import { HashLink } from 'react-router-hash-link';
+import type { Dispatch, SetStateAction } from 'react';
+import closeMenu from './closeMenu';
 
 type Props = {
   openedMenu?: boolean;
+  setIsOpenMenu?: Dispatch<SetStateAction<boolean>>;
 }
 
-const Navigation = ({ openedMenu }: Props) => {
+const Navigation = ({ openedMenu, setIsOpenMenu }: Props) => {
+
   return (
     <>
       <nav className={cn(styleNavigation.navigation,
@@ -18,28 +22,29 @@ const Navigation = ({ openedMenu }: Props) => {
             openedMenu && styleNavigation.navigation__blockList
           )}>
             <li>
-              <HashLink smooth to="/#header">Головна</HashLink>
+              <HashLink smooth to="/#header" onClick={() => closeMenu({ setIsOpenMenu })}>Головна</HashLink>
+            </li>
+
+            <li>
+              <HashLink smooth to="/#about-us" onClick={() => closeMenu({ setIsOpenMenu })}>Про нас</HashLink>
             </li>
             <li>
-              <HashLink smooth to="/#about-us">Про нас</HashLink>
+              <HashLink smooth to="#" onClick={() => closeMenu({ setIsOpenMenu })}>Новини</HashLink>
             </li>
             <li>
-              <HashLink smooth to="#">Новини</HashLink>
+              <HashLink smooth to="/#projects" onClick={() => closeMenu({ setIsOpenMenu })}>Проєкти</HashLink>
             </li>
             <li>
-              <HashLink smooth to="/#projects">Проєкти</HashLink>
+              <HashLink smooth to="/#calendar" onClick={() => closeMenu({ setIsOpenMenu })}>Календар подій</HashLink>
             </li>
             <li>
-              <HashLink smooth to="/#calendar">Календар подій</HashLink>
+              <HashLink smooth to="/#partners" onClick={() => closeMenu({ setIsOpenMenu })}>Партнери</HashLink>
             </li>
             <li>
-              <HashLink smooth to="/#partners">Партнери</HashLink>
+              <HashLink smooth to="/#contacts" onClick={() => closeMenu({ setIsOpenMenu })}>Контакти</HashLink>
             </li>
             <li>
-              <HashLink smooth to="/#contacts">Контакти</HashLink>
-            </li>
-            <li>
-              <HashLink smooth to="#">Підтримати RAZOM!</HashLink>
+              <HashLink smooth to="#" onClick={() => closeMenu({ setIsOpenMenu })}>Підтримати RAZOM!</HashLink>
             </li>
           </ul>
         </div>

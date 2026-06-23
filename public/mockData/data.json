@@ -1,0 +1,71 @@
+{
+  "news": [
+    {
+      "id": 1,
+      "date": "2026-06-08",
+      "category": "political",
+      "title": {
+        "ua": "Нові права для біженців у Німеччині",
+        "en": "New rights for refugees in Germany",
+        "de": "Neue Rechte für Geflüchtete in Deutschland"
+      },
+      "content": {
+        "ua": "Важливі зміни в законодавстві...",
+        "en": "Important changes in legislation...",
+        "de": "Wichtige Gesetzesänderungen..."
+      }
+    }
+  ],
+  "events": [
+    {
+      "id": 1,
+      "date": "2026-06-15",
+      "location": "Berlin / Online",
+      "title": {
+        "ua": "Правова підтримка українців",
+        "en": "Legal support for Ukrainians",
+        "de": "Rechtliche Unterstützung für Ukrainer"
+      },
+      "description": {
+        "ua": "Зустріч з юристами щодо інтеграції.",
+        "en": "Meeting with lawyers regarding integration.",
+        "de": "Treffen mit Anwälten zur Integration."
+      },
+      "what_to_bring": {
+        "ua": "Паспорт та посвідку",
+        "en": "Passport and residence permit",
+        "de": "Reisepass und Aufenthaltstitel"
+      }
+    }
+  ],
+  "team": [
+    {
+      "id": 1,
+      "name": "Diana",
+      "role": {
+        "ua": "Координаторка проєктів",
+        "en": "Project Coordinator",
+        "de": "Projektkoordinatorin"
+      },
+      "bio": {
+        "ua": "Створює безпечний простір для кожного.",
+        "en": "Creates a safe space for everyone.",
+        "de": "Schafft einen sicheren Raum für alle."
+      },
+      "photo_url": "https://api.example.com/static/diana.jpg"
+    }
+  ],
+  "partners": [
+    {
+      "id": 1,
+      "name": "LGBT Military Ukraine",
+      "description": {
+        "ua": "Організація ЛГБТ+ військових",
+        "en": "Organization of LGBT+ military",
+        "de": "Organisation von LGBT+-Militärs"
+      },
+      "site_url": "https://www.lgbtmilitary.org.ua/",
+      "is_active_project": "True"
+    }
+  ]
+}

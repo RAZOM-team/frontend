@@ -22,8 +22,13 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
+import type { eventsInfo } from '../../types/dataInfo';
 
-const CalendarOfEvents = () => {
+type Props = {
+  data: eventsInfo[] | [],
+}
+
+const CalendarOfEvents = ({ data }: Props) => {
   const today = startOfToday();
   const [activeDate, setActiveDate] = useState(today);
   const { t } = useTranslation();
@@ -37,6 +42,9 @@ const CalendarOfEvents = () => {
 
   const locale = localeMap[language] ?? uk;
 
+  console.log('Події');
+  console.log(data);
+
   const weekDays = Array.from({ length: 7 }, (_, i) =>
     format(new Date(2023, 0, i + 1), 'EEEEEE', { locale })
   );
@@ -48,7 +56,7 @@ const CalendarOfEvents = () => {
     return eachDayOfInterval({ start, end });
   }, [activeDate]);
 
-  const events = [{ id: 1, date: '2026-05-29', type: 'cultural' }];
+  // const events = [{ id: 1, date: '2026-05-29', type: 'cultural' }];
   const handlePrev = () => setActiveDate(subMonths(activeDate, 1));
   const handleNext = () => setActiveDate(addMonths(activeDate, 1));
 
@@ -69,8 +77,6 @@ const CalendarOfEvents = () => {
           <Swiper
             spaceBetween={16}
             slidesPerView={'auto'}
-            onSwiper={(swiper) => console.log(swiper)}
-            onSlideChange={() => console.log('slide change')}
           >
             <SwiperSlide className={stylesCalendarOfEvents.calendar__slide}>
               <button className={stylesCalendarOfEvents.calendar__category}>{t('categoryAll')}</button>
@@ -119,7 +125,7 @@ const CalendarOfEvents = () => {
 
         <div className={stylesCalendarOfEvents.calendar__calendarGrid}>
           {days.map(day => {
-            const dayEvents = events.filter(event =>
+            const dayEvents = data.filter(event =>
               isSameDay(new Date(event.date), day)
             );
 

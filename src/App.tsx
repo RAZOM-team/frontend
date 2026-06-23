@@ -11,7 +11,6 @@ import type { DataVolunteer } from './types/registration.ts';
 import type { DataMember } from './types/registration.ts';
 import OverviewPoject from './components/OverviewPoject/OverviewPoject.tsx';
 
-
 function App() {
   const memberUser = useDynamicState<DataMember>(
     {

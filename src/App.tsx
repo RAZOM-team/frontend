@@ -10,6 +10,7 @@ import VolunteerPersonalization from './components/VolunteerPersonalization/Volu
 import type { DataVolunteer } from './types/registration.ts';
 import type { DataMember } from './types/registration.ts';
 import OverviewPoject from './components/OverviewPoject/OverviewPoject.tsx';
+import Contacts from './components/Contacts/Contacts.tsx';
 
 function App() {
   const memberUser = useDynamicState<DataMember>(
@@ -73,6 +74,7 @@ function App() {
             />} />
         
         <Route path='/overviewPoject' element={<OverviewPoject />} />
+        <Route path='/contacts' element={<Contacts />} />
       </Routes>
     </>
   );

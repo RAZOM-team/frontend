@@ -8,7 +8,7 @@ import OurProjects from "../components/OurProjects/OurProjects";
 import type { eventsInfo, events } from "../types/dataInfo";
 
 const MainPage = () => {
-  const [data, setData] = useState<events | {}>({});
+  const [data, setData] = useState<events | object>({});
 
   useEffect(() => {
     fetch('http://localhost:5173/mockData/data.json')

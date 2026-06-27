@@ -4,12 +4,14 @@ import Navigation from "../Navigation/Navigation";
 import Policy from "../Policy/Policy";
 import Razom from "../RAZOM/Razom";
 import Socials from "../Socials/Socials";
+import TopBar from '../TopBar/TopBar';
 
 const RegisterToAnEvent = () => {
   return (
     <>
+      <TopBar isBlack={true} />
       <div className={styles.registerToAnEvent__calendar}>
-        <CalendarOfEvents />
+        <CalendarOfEvents data={[]} />
       </div>
       <Navigation />
       <Socials />

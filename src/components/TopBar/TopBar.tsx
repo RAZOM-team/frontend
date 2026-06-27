@@ -3,13 +3,15 @@ import logo from '../../assets/razom-logo.svg';
 import useLang from './useLang';
 import type { Dispatch, SetStateAction } from 'react';
 import cn from 'classnames';
+import { HashLink } from 'react-router-hash-link';
 
 type Props = {
   setIsOpenMenu?: Dispatch<SetStateAction<boolean>>;
   isBlack?: boolean;
+  isOpen?: boolean;
 }
 
-const TopBar = ({ setIsOpenMenu, isBlack = false }: Props) => {
+const TopBar = ({ setIsOpenMenu, isBlack = false, isOpen = false }: Props) => {
   const { language, setLanguage } = useLang();
 
   const changeLang = () => {
@@ -35,9 +37,9 @@ const TopBar = ({ setIsOpenMenu, isBlack = false }: Props) => {
   return (
     <>
       <div className={topBarStyles.topBar}>
-        <a href="#" className={topBarStyles.topBar__logoReference}>
+        <HashLink to={'/#'} className={topBarStyles.topBar__logoReference}>
           <img src={logo} alt="razom" className={topBarStyles.topBar__logo} />
-        </a>
+        </HashLink>
 
         <div className={topBarStyles.topBar__wrapper}>
 
@@ -53,6 +55,7 @@ const TopBar = ({ setIsOpenMenu, isBlack = false }: Props) => {
             className={cn(
               topBarStyles.topBar__burger,
               isBlack && topBarStyles.topBar__darkBurger,
+              isOpen && topBarStyles.topBar__close,
             )}
             onClick={() => openMenu()}>
           </button>

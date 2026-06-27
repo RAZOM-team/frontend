@@ -27,27 +27,32 @@
       display: inline-block;
       height: fit-content;
     }
-
-    & a {
-      line-height: 140%;
-      font-family: 'Manrope', sans-serif;
-      font-weight: 400;
-      font-size: 16px;
-      letter-spacing: 0;
-      text-decoration: none;
-      color: #212529;
-    }
   }
 
   &__blockList {
     grid-template-columns: repeat(1, minmax(0, 1fr));
     gap: 8px;
     padding-bottom: 52px;
+  }
 
-    & a {
-      display: block;
-      // width: 100%;
-      padding: 12px;
+  &__menuItem {
+    display: block;
+    padding: 12px;
+    line-height: 140%;
+    font-family: 'Manrope', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    letter-spacing: 0;
+    text-decoration: none;
+    color: #212529;
+
+    &--active {
+      color: #212529;
+      background-color: #e0f2d9;
+    }
+
+    &--dimmed {
+      color: #ced4da;
     }
   }
 }

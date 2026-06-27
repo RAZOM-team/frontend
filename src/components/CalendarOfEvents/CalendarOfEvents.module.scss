@@ -5,7 +5,7 @@
     font-size: 32px;
     line-height: 110%;
     letter-spacing: 0;
-    margin-block: 64px 24px;
+    margin-bottom: 24px;
     color: #212529;
   }
 
@@ -72,20 +72,15 @@
     background-image: url('../../assets/icons/Arrow-right-without-border.svg');
   }
 
-  &__calendarGrid {
-    margin-bottom: 98.43px;
-  }
-
-  &__weekDays {
-    gap: 26px;
-    padding-bottom: 20px;
-  }
-
   &__weekDay {
     font-family: 'Manrope', sans-serif;
     color: #6c757d;
-    width: 22px;
-    height: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 43.57px;
+    height: 43.57px;
+    padding-bottom: 8px;
   }
 
   &__calendarGrid,
@@ -94,16 +89,25 @@
     display: grid;
     grid-template-columns: repeat(7, fit-content(24px));
     margin: 0 auto;
-    gap: 28px;
-    column-gap: 28px;
+    gap: 4px;
+    column-gap: 8px;
+  }
+
+  &__calendarGrid {
+    margin-bottom: 58.43px;
   }
 
   &__dayCell {
     margin: 0 auto;
-    width: 22px;
-    height: 24px;
     color: #212529;
     cursor: pointer;
+
+    width: 43.57px;
+    height: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
 
     &_hasEvent {
       position: relative;
@@ -112,17 +116,18 @@
         content: '';
         position: absolute;
         left: 0;
-        bottom: -4px; 
+        bottom: -4px;
 
-        width: 100%; 
-        height: 2px; 
-        background-color: #cb6ce6; 
+        width: 100%;
+        height: 2px;
+        background-color: #cb6ce6;
         border-radius: 2px;
       }
     }
 
     &_selected {
-      background-color: blue;
+      border: 1px solid #07029d;
+      border-radius: 4px;
     }
   }
 

@@ -1,8 +1,9 @@
 import cn from 'classnames';
 import styleNavigation from './Navigation.module.scss';
 import { HashLink } from 'react-router-hash-link';
-import type { Dispatch, SetStateAction } from 'react';
+import { useState, type Dispatch, type SetStateAction } from 'react';
 import closeMenu from './closeMenu';
+import { useTranslation } from 'react-i18next';
 
 type Props = {
   openedMenu?: boolean;
@@ -10,6 +11,60 @@ type Props = {
 }
 
 const Navigation = ({ openedMenu, setIsOpenMenu }: Props) => {
+  const [selectedItem, setSelectedItem] = useState<string | null>(null);
+  const { t } = useTranslation();
+
+  const navItems = [{
+    item: t("Головна"),
+    to: "/#header",
+  },
+  {
+    item: t("Про нас"),
+    to: "/#about-us",
+  },
+  {
+    item: t("Новини"),
+    to: "#",
+  },
+  {
+    item: t("Проєкти"),
+    to: "/#projects",
+  },
+  {
+    item: t("Календар подій"),
+    to: "/#calendar",
+  },
+  {
+    item: t("Партнери"),
+    to: "/#partners",
+  },
+  {
+    item: t("Контакти"),
+    to: "/contacts", // /contacts
+  },
+  {
+    item: t("Підтримати RAZOM!"),
+    to: "/getVolunteer",
+  },
+  ];
+
+  const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, itemNames: string, targetUrl: string) => {
+    e.preventDefault();
+
+    setSelectedItem(itemNames);
+
+    console.log(selectedItem);
+
+    setTimeout(() => {
+      if (targetUrl.startsWith('#')) {
+        const element = document.querySelector(targetUrl);
+        element?.scrollIntoView({ behavior: 'smooth' });
+      } else {
+        window.location.href = targetUrl;
+        closeMenu({ setIsOpenMenu });
+      }
+    }, 480);
+  };
 
   return (
     <>
@@ -21,31 +76,30 @@ const Navigation = ({ openedMenu, setIsOpenMenu }: Props) => {
           <ul className={cn(styleNavigation.navigation__list,
             openedMenu && styleNavigation.navigation__blockList
           )}>
-            <li>
-              <HashLink smooth to="/#header" onClick={() => closeMenu({ setIsOpenMenu })}>Головна</HashLink>
-            </li>
+            {navItems.map(item => {
+              const isCurrentSelected = selectedItem === item.item;
+              const isAnyOtherSelected = selectedItem !== null && !isCurrentSelected;
 
-            <li>
-              <HashLink smooth to="/#about-us" onClick={() => closeMenu({ setIsOpenMenu })}>Про нас</HashLink>
-            </li>
-            <li>
-              <HashLink smooth to="#" onClick={() => closeMenu({ setIsOpenMenu })}>Новини</HashLink>
-            </li>
-            <li>
-              <HashLink smooth to="/#projects" onClick={() => closeMenu({ setIsOpenMenu })}>Проєкти</HashLink>
-            </li>
-            <li>
-              <HashLink smooth to="/#calendar" onClick={() => closeMenu({ setIsOpenMenu })}>Календар подій</HashLink>
-            </li>
-            <li>
-              <HashLink smooth to="/#partners" onClick={() => closeMenu({ setIsOpenMenu })}>Партнери</HashLink>
-            </li>
-            <li>
-              <HashLink smooth to="/#contacts" onClick={() => closeMenu({ setIsOpenMenu })}>Контакти</HashLink>
-            </li>
-            <li>
-              <HashLink smooth to="#" onClick={() => closeMenu({ setIsOpenMenu })}>Підтримати RAZOM!</HashLink>
-            </li>
+              return (
+                <li onClick={() => setSelectedItem(item.item)} key={item.to} >
+                  <HashLink
+                    smooth
+                    to={item.to}
+                    onClick={(e) => {
+                      setSelectedItem(item.item);
+                      handleLinkClick(e, item.item, item.to);
+                    }}
+                    className={cn(styleNavigation.navigation__menuItem, {
+                      [styleNavigation['navigation__menuItem--active']]: isCurrentSelected,
+                      [styleNavigation['navigation__menuItem--dimmed']]: isAnyOtherSelected,
+                    })}
+                  >
+                    {item.item}
+                  </HashLink>
+                </li>
+              );
+            })}
+
           </ul>
         </div>
       </nav>

@@ -1,26 +1,16 @@
-.ourProjects {
-  &__nav {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 12;
-    background-color: #f8f9fa;
-    pointer-events: all;
-  }
-
-  &__title {
-    font-family: 'Manrope', sans-serif;
-    font-weight: 400;
-    font-size: 32px;
-    line-height: 110%;
-    letter-spacing: 0;
-    color: #212529;
-    margin-block: 40px 47.5px;
-  }
+.viewEvent {
+  margin-inline: 16px;
 
   &__deteilsWrapper {
     margin: 0 16px;
+  }
+
+  &__line {
+    height: 2px;
+    width: 95%;
+    background-color: #cb6ce6;
+    border-radius: 2px;
+    margin-block: 12px;
   }
 
   &__devideLine {
@@ -42,7 +32,8 @@
     }
   }
 
-  &__name {
+  &__name,
+  &__time {
     font-family: 'Manrope', sans-serif;
     text-align: start;
     font-weight: 400;
@@ -65,7 +56,31 @@
     }
   }
 
-  &__info {
+  &__name {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+  }
+
+  &__text {
+    width: fit-content;
+  }
+
+  &__timePoint {
+    padding-top: 10px;
+    line-height: 120%;
+    letter-spacing: 0;
+    font-size: 24px;
+  }
+
+  &__time {
+    margin-top: 40px;
+    margin-left: 16px;
+  }
+
+  &__info,
+  &__location,
+  &__rules {
     font-family: 'Manrope', sans-serif;
     font-weight: 400;
     font-size: 16px;
@@ -76,7 +91,32 @@
     margin-top: 8px;
   }
 
+  &__location {
+    color: #212529;
+  }
+
+  &__rules {
+    color: #000;
+  }
+
   &__knowMore {
+    color: #212529;
+    background-color: #7eda57;
+    width: 100%;
+    height: 49px;
+    padding-block: 12px;
+    text-align: center;
+    border: none;
+    border-radius: 8px;
+    font-family: "Manrope", sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 140%;
+    letter-spacing: 0;
+    margin-top: 16px;
+  }
+
+  &__register {
     color: #212529;
     background-color: #7eda57;
     width: 100%;

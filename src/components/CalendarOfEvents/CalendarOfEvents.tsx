@@ -23,6 +23,7 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 import type { eventsInfo } from '../../types/dataInfo';
+import ViewEvent from '../ViewEvent/ViewEvent';
 
 type Props = {
   data: eventsInfo[] | [],
@@ -56,7 +57,6 @@ const CalendarOfEvents = ({ data }: Props) => {
     return eachDayOfInterval({ start, end });
   }, [activeDate]);
 
-  // const events = [{ id: 1, date: '2026-05-29', type: 'cultural' }];
   const handlePrev = () => setActiveDate(subMonths(activeDate, 1));
   const handleNext = () => setActiveDate(addMonths(activeDate, 1));
 
@@ -148,6 +148,10 @@ const CalendarOfEvents = ({ data }: Props) => {
           })}
         </div>
       </section>
+
+      {!!selectedDay && (
+        <ViewEvent />
+      )}
     </>
   );
 };

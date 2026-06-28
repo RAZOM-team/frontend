@@ -1,6 +1,24 @@
 .overview {
-  margin-inline: 16px;
-  
+  &__title, &__littleTitle, &__info {
+    margin-inline: 16px;
+  }
+
+  &__none {
+    pointer-events: none;
+    position: relative;
+    background-color: #2125298C;
+  }
+
+  &__nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 12;
+    background-color: #f8f9fa;
+    pointer-events: all;
+  }
+
   &__title {
     font-family: 'Manrope', sans-serif;
     font-weight: 400;
@@ -28,5 +46,86 @@
     line-height: 110%;
     letter-spacing: 0;
     color: #495057;
+    margin-bottom: 24px;
+  }
+
+  &__slide {
+    width: auto !important; // use important to change rules from library
+  }
+
+  &__container {
+    display: block;
+    border: 1px solid #ced4da;
+    position: relative;
+    min-width: 297px;
+    max-width: 361px;
+
+    min-height: 400px;
+    max-height: 526px;
+
+    margin: 0 auto 8px;
+    border-radius: 8px;
+    text-decoration: none;
+    padding-inline: 24px;
+    box-sizing: border-box;
+  }
+
+  &__projectTitle {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 120%;
+    letter-spacing: 0;
+    color: #212529;
+    margin-block: 24px 16px;
+    text-align: start;
+  }
+
+  &__description {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 140%;
+    letter-spacing: 0;
+    color: #212529;
+    margin-bottom: 16px;
+    text-align: start;
+
+    &--last {
+      margin-bottom: 170px;
+    }
+  }
+
+  &__icon {
+    width: 39px;
+    height: 39px;
+    margin-right: 70px;
+    margin-bottom: 70px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
+
+  &__customPagination {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    padding-bottom: 40px;
+  }
+
+  &__bullet {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    border: 1px solid #adb5bd;
+    background-color: transparent;
+    transition: transform 0.25s ease, background-color 0.25s ease, border-color 0.25s ease;
+    cursor: pointer;
+    padding: 0;
+  }
+
+  &__bulletActive {
+    background-color: #495057;
+    border-color: #495057;
   }
 }

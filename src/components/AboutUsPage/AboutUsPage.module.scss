@@ -1,0 +1,87 @@
+@use '../../styles/mixins.module' as mixins;
+
+.aboutUs {
+
+  &__wrapper {
+    margin-inline: 16px;
+  }
+
+  &__title {
+    @include mixins.font-standart-size-32;
+
+    color: #000;
+    line-height: 110%;
+  }
+
+  &__smallTitle {
+    @include mixins.font-standart-size-24;
+
+    color: #000;
+    line-height: 110%;
+    margin-block: 40px 24px
+  }
+
+  &__describe {
+    @include mixins.font-standart-size-16;
+
+    color: #495957;
+    line-height: 140%;
+    margin-block: 16px 40px;
+  }
+
+  &__nameWrapper {
+    padding: 16px;
+
+    &[open] span {
+      display: block;
+      width: 24px;
+      height: 24px;
+      padding: 10px;
+      background-image: url('../../assets/icons/Minus.svg');
+    }
+  }
+
+  &__name {
+    font-family: 'Manrope', sans-serif;
+    text-align: start;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 120%;
+    letter-spacing: 0;
+    color: #212529;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    span {
+      display: block;
+      background-image: url('../../assets/icons/Plus.svg');
+      background-repeat: no-repeat;
+      background-position: center;
+      width: 24px;
+      height: 24px;
+      padding: 10px;
+    }
+  }
+
+  &__info {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 140%;
+    letter-spacing: 0;
+    color: #495057;
+    text-align: left;
+    margin-top: 8px;
+  }
+
+  &__devideLine {
+    width: 100%;
+    height: 1px;
+    background-color: #dee2e6;
+  }
+
+  &__linkWrapper, &__emailWrapper {
+    margin-top: 40px;
+  }
+}

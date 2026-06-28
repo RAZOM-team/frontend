@@ -20,7 +20,7 @@ const Navigation = ({ openedMenu, setIsOpenMenu }: Props) => {
   },
   {
     item: t("Про нас"),
-    to: "/#about-us",
+    to: "/about-us",
   },
   {
     item: t("Новини"),

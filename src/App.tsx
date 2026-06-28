@@ -12,6 +12,7 @@ import type { DataMember } from './types/registration.ts';
 import OverviewPoject from './components/OverviewPoject/OverviewPoject.tsx';
 import Contacts from './components/Contacts/Contacts.tsx';
 import GoToTheEvent from './components/GoToTheEvent/GoToTheEvent.tsx';
+import AboutUsPage from './components/AboutUsPage/AboutUsPage.tsx';
 
 function App() {
   const memberUser = useDynamicState<DataMember>(
@@ -59,7 +60,7 @@ function App() {
             />} />
         <Route path='/registration-success' element={<RegistrationSuccess />} />
         <Route path='/calendar' element={<RegisterToAnEvent />} />
-        <Route path='/calendar/:slug' element={<GoToTheEvent /> } />
+        <Route path='/calendar/:slug' element={<GoToTheEvent />} />
         <Route
           path='/getVolunteer'
           element={
@@ -74,9 +75,10 @@ function App() {
             <VolunteerPersonalization
               initialResponse={volunteerUser.userResponses}
             />} />
-        
+
         <Route path='/overviewPoject' element={<OverviewPoject />} />
         <Route path='/contacts' element={<Contacts />} />
+        <Route path='/about-us' element={<AboutUsPage />} />
       </Routes>
     </>
   );

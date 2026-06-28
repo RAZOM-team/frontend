@@ -1,6 +1,7 @@
+import { Link } from 'react-router-dom';
 import styles from './ViewEvent.module.scss';
 
-const ViewEvent = () => {
+const ViewEvent = ({ slug }: { slug: string }) => {
   return (
     <>
       <div className={styles.viewEvent}>
@@ -23,7 +24,7 @@ const ViewEvent = () => {
             Ми надамо ігри (від Дженги до Імаджинаріуму) та смаколики, проте закликаємо приносити свої улюблені ігри та їжу, аби зробити цю подію ще приємнішою та різноманітнішою
           </p>
 
-          <button className={styles.viewEvent__register}>Зареєструватися на подію</button>
+          <Link to={`/calendar/${slug}`}><button className={styles.viewEvent__register}>Зареєструватися на подію</button></Link>
 
         </details>
 

@@ -1,0 +1,105 @@
+@use '../../styles/mixins.module' as mixins;
+
+.registerEvent {
+  &__title {
+    @include mixins.font-standart-size-32;
+
+    color: #212529;
+    line-height: 120%
+  }
+
+  &__form {
+    @include mixins.font-standart-size-16;
+
+    color: #212529;
+    line-height: 140%;
+    margin-inline: 16px;
+    width: auto;
+    margin-block: 24px 40px;
+  }
+
+  &__label {
+    display: block;
+    width: 100%;
+
+    & :first-child {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+
+  &__email {
+    &::placeholder {
+      @include mixins.font-standart-size-16;
+    }
+
+    &:focus,
+    &:focus-visible {
+      outline: none;
+      border: none;
+      border-bottom: 2px solid #3b82f6;
+    }
+
+    padding: 12px;
+    width: 100%;
+    box-sizing: border-box;
+    border: none;
+    border-bottom: 1px solid #dee2e6;
+    margin-top: 8px;
+  }
+
+  &__eventDescribe {
+    margin-inline: 32px;
+  }
+
+  &__info {
+    @include mixins.font-standart-size-24;
+
+    line-height: 120%;
+    color: #212529;
+    text-align: left;
+    margin-block: 12px 8px;
+  }
+
+  &__rules,
+  &__location {
+    @include mixins.font-standart-size-16;
+
+    text-align: left;
+    color: #000;
+    margin-top: 8px;
+  }
+
+  &__name {
+    font-family: 'Manrope', sans-serif;
+    text-align: start;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 120%;
+    letter-spacing: 0;
+    color: #212529;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__nameWrapper {
+    margin: 16px;
+
+    &[open] span {
+      display: block;
+      width: 24px;
+      height: 24px;
+      padding: 10px;
+      background-image: url('../../assets/icons/Minus.svg');
+    }
+  }
+
+  &__line {
+    height: 2px;
+    background-color: #cb6ce6;
+    border-radius: 2px;
+    margin-block: 12px;
+  }
+}

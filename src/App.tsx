@@ -11,6 +11,7 @@ import type { DataVolunteer } from './types/registration.ts';
 import type { DataMember } from './types/registration.ts';
 import OverviewPoject from './components/OverviewPoject/OverviewPoject.tsx';
 import Contacts from './components/Contacts/Contacts.tsx';
+import GoToTheEvent from './components/GoToTheEvent/GoToTheEvent.tsx';
 
 function App() {
   const memberUser = useDynamicState<DataMember>(
@@ -58,6 +59,7 @@ function App() {
             />} />
         <Route path='/registration-success' element={<RegistrationSuccess />} />
         <Route path='/calendar' element={<RegisterToAnEvent />} />
+        <Route path='/calendar/:slug' element={<GoToTheEvent /> } />
         <Route
           path='/getVolunteer'
           element={

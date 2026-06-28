@@ -30,6 +30,7 @@ const RegisterTopBar = ({ fraction }: partLevel) => {
         <div 
           className={cn(styles.registerTopBar__passedPartsLevel, {
             [styles.registerTopBar__passedPartsLevel__oneThird]: fraction === 27,
+            [styles.registerTopBar__passedPartsLevel__fifty]: fraction === 50,
             [styles.registerTopBar__passedPartsLevel__twoThird]: fraction === 81,
             [styles.registerTopBar__passedPartsLevel__full]: fraction === 108,
           })}

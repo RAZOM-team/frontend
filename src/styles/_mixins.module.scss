@@ -1,0 +1,23 @@
+@mixin font-standart {
+  font-family: 'Manrope', sans-serif;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+
+@mixin font-standart-size-16 { 
+  @include font-standart;
+
+  font-size: 16px;
+}
+
+@mixin font-standart-size-24 {
+  @include font-standart;
+
+  font-size: 24px;
+}
+
+@mixin font-standart-size-32 { 
+  @include font-standart;
+
+  font-size: 32px;
+}

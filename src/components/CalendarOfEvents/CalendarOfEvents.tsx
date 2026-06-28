@@ -150,7 +150,7 @@ const CalendarOfEvents = ({ data }: Props) => {
       </section>
 
       {!!selectedDay && (
-        <ViewEvent />
+        <ViewEvent slug={'event-12-03-2026'} />
       )}
     </>
   );

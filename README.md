@@ -1,75 +1,46 @@
-# React + TypeScript + Vite
+  ### Основний стек та архітектура:
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+  ## Фреймворк: React 19 (SPA — Single Page Application).
 
-Currently, two official plugins are available:
+  # Мова розробки: TypeScript.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+  - Інструмент збірки (Build Tool / Bundler): Vite 8 (використовує сучасно налаштовані плагіни, включаючи експериментальний Babel/Rolldown та новий React Compiler).
 
-## React Compiler
+  - Стилізація: SASS (через сучасний компілятор sass-embedded) + CSS Modules.
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+  # Менеджер пакетів: npm.
 
-Note: This will impact Vite dev & build performances.
+  # Ключові бібліотеки (Залежності):
 
-## Expanding the ESLint configuration
+  - Роутинг: react-router-dom (v7) + хеш-лінки react-router-hash-link (для плавної навігації по сторінці).
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+  - Інтернаціоналізація (Мультимовність): i18next + react-i18next (додаток підтримує зміну мов).
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+  # Робота з датами: date-fns.
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+  # Слайдери/Галереї: swiper.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+  ## Утиліти: classnames (для динамічного керування CSS-класами).
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+  ### 📦Інструкція для збірки та деплою (Що важливо для CI/CD):
+  - Версія Node.js: Бажано використовувати Node.js v20+ або v22+ (оскільки Vite 8 та TypeScript 6 вимагають сучасного оточення).
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+  ### Встановлення залежностей:
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+Bash: 
+  `npm ci`
+
+(Рекомендується саме npm ci замість `npm install` для чистих збірок на сервері автоматизації).
+
+Линтинг (Перевірка коду):
+
+Bash:
+  `npm run lint`
+Production-збірка:
+
+Bash:
+  `npm run build`
+  
+Команда спочатку валідує типи через TypeScript (tsc -b), а потім запускає vite build.
+
+Результат збірки: Готові статичні файли (HTML/JS/CSS) згенеруються в папку /dist у корені проєкту. Цю папку потрібно проксіювати через Nginx або будь-який інший веб-сервер.

@@ -1,4 +1,9 @@
 .further {
+  &__disabled {
+    display: block;
+    pointer-events: none;
+  }
+
   &__button {
     box-sizing: border-box;
     height: 49px;
@@ -31,5 +36,4 @@
       background-color: #5ea441;
     }
   }
-
 }

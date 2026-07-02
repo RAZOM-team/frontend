@@ -1,4 +1,10 @@
+@use '../../styles/mixins.module' as mixins;
+
 .registerForm {
+  min-height: 852px;
+  box-sizing: border-box;
+  position: relative;
+
   &__levelLine {
     margin: 36px auto 16px;
     width: 108px;
@@ -17,8 +23,16 @@
   &__form {
     display: flex;
     flex-direction: column;
+    // height: 100%;
     margin: 0 16px 40px;
-    position: relative;
+    // position: relative;
+    gap: 16px;
+  }
+
+  &__wrapperForm {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
   }
 
   &__label {
@@ -35,7 +49,7 @@
     width: 100%;
     border: none;
     border-bottom: 1px solid #dee2e6;
-    margin-block: 8px 16px;
+    margin-top: 8px;
 
     padding: 12px;
     box-sizing: border-box;
@@ -50,24 +64,39 @@
     }
   }
 
-  // &__further {
-  //   box-sizing: border-box;
-  //   height: 49px;
-  //   margin: 24px 16px 32px;
-  //   width: -webkit-fill-available;
-  //   background-color: #e9ecef;
-  //   padding: 12px;
-  //   position: absolute;
-  //   bottom: 0;
-  //   left: 0;
-  //   text-align: center;
+  &__errorOfFirstName,
+  &__errorOfLastName,
+  &__errorOfEmail,
+  &__errorOfNumber {
+    @include mixins.font-standart-size-16;
 
-  //   font-family: 'Manrope', sans-serif;
-  //   font-weight: 400;
-  //   font-size: 18px;
-  //   line-height: 140%;
-  //   letter-spacing: 0;
-  //   color: #6c757d;
-  //   border-radius: 4px;
-  // }
+    display: none;
+    line-height: 140%;
+    color: #9d0208;
+  }
+
+  &__isError {
+    display: block;
+    overflow: hidden;
+    margin-top: 8px;
+
+    & div {
+      margin-top: 2px;
+    }
+  }
+
+  &__errorIcon {
+    float: left;
+    width: 24px;
+    height: 24px;
+    margin-right: 4px;
+  }
+
+  &__buttonWrapper {
+    display: block;
+    width: 361px;
+    height: 49px;
+    // position: absolute;
+    bottom: 0;
+  }
 }

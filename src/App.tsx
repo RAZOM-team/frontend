@@ -14,6 +14,13 @@ import Contacts from './components/Contacts/Contacts.tsx';
 import GoToTheEvent from './components/GoToTheEvent/GoToTheEvent.tsx';
 import AboutUsPage from './components/AboutUsPage/AboutUsPage.tsx';
 
+export type UserInfo = {
+  firstName: string,
+  lastName: string,
+  email: string,
+  cellNumber: string,
+}
+
 function App() {
   const memberUser = useDynamicState<DataMember>(
     {

@@ -19,14 +19,14 @@ const validData = (
 
     errors.firstName = 'Ім’я повинно містити не менше 2 символів';
   } else {
-    errors.firstName = '';
+    errors.firstName = 'Confirmed';
   }
 
   if (userData.lastName.length < 2) {
 
     errors.secondName = 'Прізвище повинно містити не менше 2 символів';
   } else {
-    errors.secondName = '';
+    errors.secondName = 'Confirmed';
   }
 
   const cleanedEmail = userData.email.trim().toLowerCase();
@@ -36,10 +36,9 @@ const validData = (
   if (userData.email.trim().length === 0) {
     errors.email = 'Вкажіть ваш імейл, будь ласка';
   } else if (!emailRegex.test(cleanedEmail)) {
-
     errors.email = 'Вкажіть імейл формату "example@gmail.com"';
   } else {
-    errors.email = '';
+    errors.email = 'Confirmed';
   }
 
   const cleanedPhone = userData.cellNumber.replace(/[\s\-()]/g, '');
@@ -48,16 +47,16 @@ const validData = (
     ? '+' + cleanedPhone
     : cleanedPhone;
 
-  const strictInternationalPhoneRegex = /^\+[1-9]\d{6,14}$/;
+  const strictInternationalPhoneRegex = /^\+[1-9]\d{9,14}$/;
 
   if (userData.cellNumber.trim().length === 0) {
 
     errors.number = 'Вкажіть ваш номер телефону, будь ласка';
   } else if (!strictInternationalPhoneRegex.test(finalPhone)) {
 
-    errors.number = 'Некоректний формат. Номер має містити код країни та від 7 до 15 цифр';
+    errors.number = 'Некоректний формат. Номер має містити код країни та від 10 до 15 цифр';
   } else {
-    errors.number = '';
+    errors.number = 'Confirmed';
   }
 
   return errors;

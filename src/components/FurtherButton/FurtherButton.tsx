@@ -3,17 +3,19 @@ import cn from 'classnames';
 
 type Props = {
   disabled?: boolean;
+  isClicked?: boolean
   pathPart: string;
 }
 
 const FurtherButton = ({
   pathPart,
-  disabled = false,
+  disabled,
+  isClicked = false,
 }: Props) => {
   const inscription = pathPart === '' ? 'На головну сторінку' : 'Далі';
 
   console.log(`${disabled} -- disabled`);
-  
+
   return (
     <>
       {/* <Link to={`/${pathPart}`} className={cn({
@@ -21,15 +23,16 @@ const FurtherButton = ({
       })}>
       </Link> */}
 
-        <button
-          type="submit"
-          // disabled={!disabled}
-          onClick={() => {}}
-          className={cn(styles.further__button, {
-            [styles.further__buttonGoToMainPage]: pathPart === '',
-          })}>
-          {inscription}
-        </button>
+      <button
+        type="submit"
+        onClick={() => { }}
+        className={cn(styles.further__button, {
+          [styles.further__buttonGoToMainPage]: pathPart === '',
+          [styles['further__button--unDisabled']]: disabled,
+          [styles['further__button--clicked']]: isClicked,
+        })}>
+        {inscription}
+      </button>
     </>
   );
 };

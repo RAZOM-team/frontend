@@ -23,6 +23,16 @@
     letter-spacing: 0;
     color: #6c757d;
     border-radius: 4px;
+
+    transition: transform 0.1s ease-in-out, background-color 0.2s ease;
+
+    &--unDisabled {
+      background-color: #7Eda57;
+    }
+
+    &--clicked {
+      transform: scale(0.93);
+    }
   }
 
   &__buttonGoToMainPage {

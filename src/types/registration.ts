@@ -1,6 +1,6 @@
 export type UserInfo = {
   firstName: string,
-  lastName: string,
+  secondName: string,
   email: string,
   cellNumber: string,
 }

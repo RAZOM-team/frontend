@@ -201,13 +201,13 @@ const RegisterForm = ({ joinAs, status, initialData }: Props) => {
                 type="text"
                 placeholder='Демченко'
                 name='second name'
-                value={userData.lastName}
+                value={userData.secondName}
 
                 onChange={(e) => {
                   setUserData(prev => {
                     const updatedState = {
                       ...prev,
-                      lastName: e.target.value
+                      secondName: e.target.value
                     };
 
                     sessionStorage.setItem('register_user_data', JSON.stringify(updatedState));
@@ -231,7 +231,11 @@ const RegisterForm = ({ joinAs, status, initialData }: Props) => {
               <div className={cn(style.registerForm__confirmData, {
                 [style.registerForm__confirmed]: errorData.secondName === 'Confirmed',
               })}>
-                <img src={iconConfirmed} alt="" className={style.registerForm__iconConfirmed} />
+                <img
+                  src={iconConfirmed}
+                  alt=""
+                  className={style.registerForm__iconConfirmed}
+                />
 
                 Confirmed
               </div>
@@ -278,13 +282,18 @@ const RegisterForm = ({ joinAs, status, initialData }: Props) => {
 
                 onBlur={() => {
                   const isValid = validData(userData);
-
+                  
+                  console.log(isValid);
+                  console.log(!!errorData.email && errorData.email !== 'Confirmed');
+                  
                   setErrorData(cur => {
                     return {
                       ...cur,
-                      emeil: isValid.email,
+                      email: isValid.email,
                     }
                   });
+
+                  console.log(errorData);
                 }}
               />
 
@@ -300,7 +309,11 @@ const RegisterForm = ({ joinAs, status, initialData }: Props) => {
                 [style.registerForm__isError]:
                   !!errorData.email && errorData.email !== 'Confirmed',
               })}>
-                <img src={iconError} alt="" className={style.registerForm__errorIcon} />
+                <img
+                  src={iconError}
+                  alt=""
+                  className={style.registerForm__errorIcon}
+                />
 
                 <div>{errorData.email}</div>
               </div>
@@ -358,9 +371,14 @@ const RegisterForm = ({ joinAs, status, initialData }: Props) => {
               </div>
 
               <div className={cn(style.registerForm__errorOfNumber, {
-                [style.registerForm__isError]: !!errorData.number && errorData.number !== 'Confirmed',
+                [style.registerForm__isError]:
+                  !!errorData.number && errorData.number !== 'Confirmed',
               })}>
-                <img src={iconError} alt="" className={style.registerForm__errorIcon} />
+                <img
+                  src={iconError}
+                  alt=""
+                  className={style.registerForm__errorIcon}
+                />
 
                 <div>{errorData.number}</div>
               </div>

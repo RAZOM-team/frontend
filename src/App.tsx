@@ -16,7 +16,7 @@ import AboutUsPage from './components/AboutUsPage/AboutUsPage.tsx';
 
 export type UserInfo = {
   firstName: string,
-  lastName: string,
+  secondName: string,
   email: string,
   cellNumber: string,
 }
@@ -26,7 +26,7 @@ function App() {
     {
       userInfo: {
         firstName: '',
-        lastName: '',
+        secondName: '',
         email: '',
         cellNumber: ''
       },
@@ -40,7 +40,7 @@ function App() {
     {
       userInfo: {
         firstName: '',
-        lastName: '',
+        secondName: '',
         email: '',
         cellNumber: ''
       },
@@ -64,24 +64,29 @@ function App() {
               joinAs='учасник'
               status={'member'}
               initialData={memberUser.userInfo}
-            />} />
+            />}
+        />
         <Route path='/registration-success' element={<RegistrationSuccess />} />
         <Route path='/calendar' element={<RegisterToAnEvent />} />
         <Route path='/calendar/:slug' element={<GoToTheEvent />} />
-        <Route
+
+        {/* <Route
           path='/getVolunteer'
           element={
             <RegisterForm
               joinAs='волонтер'
               status={'volunteer'}
               initialData={volunteerUser.userInfo}
-            />} />
+            />}
+        /> */}
+
         <Route
           path='/volunteerPersonalization'
           element={
             <VolunteerPersonalization
               initialResponse={volunteerUser.userResponses}
-            />} />
+            />}
+        />
 
         <Route path='/overviewPoject' element={<OverviewPoject />} />
         <Route path='/contacts' element={<Contacts />} />

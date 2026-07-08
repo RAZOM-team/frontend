@@ -10,9 +10,11 @@ const RegisterToAnEvent = () => {
   return (
     <>
       <TopBar isBlack={true} />
+
       <div className={styles.registerToAnEvent__calendar}>
         <CalendarOfEvents data={[]} />
       </div>
+
       <Navigation />
       <Socials />
       <Policy />

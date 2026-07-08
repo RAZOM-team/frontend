@@ -1,3 +1,4 @@
+import FurtherButton from '../FurtherButton/FurtherButton';
 import RegisterTopBar from '../RegisterTopBar/RegisterTopBar';
 import styles from './GoToTheEvent.module.scss';
 
@@ -39,6 +40,8 @@ const GoToTheEvent = () => {
 
           <p className={styles.registerEvent__rules}>Участь лише для учасників!</p>
         </section>
+
+        <FurtherButton content='Зареєструватися' />
       </div>
     </>
   );

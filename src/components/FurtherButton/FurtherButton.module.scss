@@ -27,6 +27,7 @@
     transition: transform 0.1s ease-in-out, background-color 0.2s ease;
 
     &--unDisabled {
+      color: #212529;
       background-color: #7Eda57;
     }
 
@@ -39,10 +40,19 @@
     border: 1px solid #7eda57;
     background-color: transparent;
     color: #000;
-    transition: transform 0.25s ease, background-color 0.25s ease, border-color 0.25s ease;
+    transition:
+      transform 0.25s ease,
+      background-color 0.55s ease,
+      color 0.55s ease,
+      border-color 0.25s ease;
 
     &:hover {
-      transition: transform 0.25s ease, background-color 0.25s ease, border-color 0.25s ease;
+      transition:
+        transform 0.25s ease,
+        background-color 0.55s ease,
+        color 0.55s ease,
+        border-color 0.25s ease;
+
       background-color: #5ea441;
     }
   }

@@ -50,15 +50,16 @@ const AcceptConditions = ({
                   <img
                     src={axceptIcon}
                     alt="check-mark"
-                    className={style.personalization__axceptedIcon} />
+                    className={style.personalization__axceptedIcon}
+                  />
                 )}
               </div>
 
             </label>
 
-            <div className={style.personalization__agreement}>
+            {/* <div className={style.personalization__agreement}>
               Даю згоду на контакт зі мною для затвердження прийняття заявки
-            </div>
+            </div> */}
           </div>
         )}
 
@@ -77,12 +78,16 @@ const AcceptConditions = ({
             </div>
           </label>
 
-          <div className={style.personalization__agreement}>Погоджуюся з&nbsp;
-            <span className={style.personalization__agreement__confidential}>
-              Правилами спільноти
-            </span>
+          <div className={style.personalization__agreement}>
+            <div>
+              Погоджуюся з&nbsp;
 
-            &nbsp;та&nbsp;
+              <span className={style.personalization__agreement__confidential}>
+                Правилами спільноти
+              </span>
+
+              &nbsp;та&nbsp;
+            </div>
 
             <span className={style.personalization__agreement__confidential}>
               Політикою конфіденційності

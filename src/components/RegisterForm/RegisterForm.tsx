@@ -41,14 +41,6 @@ const RegisterForm = ({ joinAs, status, initialData }: Props) => {
       
       console.log(isValid);
 
-      // if (
-      //   (isValid.email.length > 0 && isValid.email !== 'Confirmed')
-      //   || (isValid.firstName.length > 0 && isValid.firstName !== 'Confirmed')
-      //   || (isValid.secondName.length > 0 && isValid.secondName !== 'Confirmed')
-      //   || (isValid.number.length > 0 && isValid.number !== 'Confirmed')
-      // ) {
-      // }
-
       return isValid;
     }
 
@@ -113,11 +105,6 @@ const RegisterForm = ({ joinAs, status, initialData }: Props) => {
 
     setTimeout(() => {
       setIsLoading(false);
-
-      // sessionStorage.removeItem('register_user_data');
-
-      console.log("Усі дані успішно перевірено, кеш очищено!");
-      console.log(isClicked);
 
       navigate(`/${truthPath}`);
     }, 2000);

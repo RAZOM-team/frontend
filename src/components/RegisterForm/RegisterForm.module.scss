@@ -72,7 +72,6 @@
   }
 
   &__iconConfirmed {
-    margin-right: 4px;
     width: 24px;
     height: 24px;
   }
@@ -94,6 +93,7 @@
 
   &__confirmed {
     display: flex;
+    gap: 4px;
     align-items: center;
     margin-top: 8px;
     color: #4f772d;

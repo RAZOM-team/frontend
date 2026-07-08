@@ -1,28 +1,30 @@
+import { useMemo } from 'react';
 import styles from './FurtherButton.module.scss';
 import cn from 'classnames';
 
 type Props = {
   disabled?: boolean;
-  isClicked?: boolean
-  pathPart: string;
+  isClicked?: boolean;
+  pathPart?: string;
+  content?: string;
 }
 
 const FurtherButton = ({
   pathPart,
   disabled,
   isClicked = false,
+  content
 }: Props) => {
-  const inscription = pathPart === '' ? 'На головну сторінку' : 'Далі';
+  const inscription = useMemo(() => {
+    if (content) {
+      return content;
+    }
 
-  console.log(`${disabled} -- disabled`);
+    return pathPart === '' ? 'На головну сторінку' : 'Далі';
+  }, [pathPart, content])
 
   return (
     <>
-      {/* <Link to={`/${pathPart}`} className={cn({
-        [styles.further__disabled]: !disabled,
-      })}>
-      </Link> */}
-
       <button
         type="submit"
         onClick={() => { }}

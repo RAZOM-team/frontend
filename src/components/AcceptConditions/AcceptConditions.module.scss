@@ -26,10 +26,10 @@
   }
 
   &__buttonAxcept {
-    margin-inline: 16px;
     box-sizing: border-box;
     width: 28px;
     height: 28px;
+    margin-inline: 8px 16px;
     border: 1px solid #495057;
     border-radius: 4px;
     display: flex;
@@ -55,8 +55,9 @@
     line-height: 140%;
     letter-spacing: 0;
     color: #212529;
-
+    
     &__confidential {
+      white-space: nowrap;
       text-decoration: underline;
     }
   }

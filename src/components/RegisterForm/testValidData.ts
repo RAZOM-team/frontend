@@ -33,7 +33,7 @@ const validateLastName = (
   setErrorData: Dispatch<SetStateAction<ErrorType>>,
   isValid: boolean
 ) => {
-  if (userData.lastName.length < 2) {
+  if (userData.secondName.length < 2) {
     isValid = false;
 
     setErrorData(obj => {

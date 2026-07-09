@@ -58,7 +58,7 @@ const Contacts = () => {
 
             <h3 className={styles.contacts__socialNetworks}>Стежте за оновленнями в наших соцмережах</h3>
 
-            <a href="https://www.instagram.com/razom.for.ukraine?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.instagram.com/razom.queer?igsh=MTN3anFpcWdrbGU2YQ==" target="_blank" rel="noopener noreferrer">
               <img className={styles.contacts__insta} src={instagramIcon} alt="" />
             </a>
 

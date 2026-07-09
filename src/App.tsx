@@ -70,7 +70,7 @@ function App() {
         <Route path='/calendar' element={<RegisterToAnEvent />} />
         <Route path='/calendar/:slug' element={<GoToTheEvent />} />
 
-        {/* <Route
+        <Route
           path='/getVolunteer'
           element={
             <RegisterForm
@@ -78,7 +78,7 @@ function App() {
               status={'volunteer'}
               initialData={volunteerUser.userInfo}
             />}
-        /> */}
+        />
 
         <Route
           path='/volunteerPersonalization'

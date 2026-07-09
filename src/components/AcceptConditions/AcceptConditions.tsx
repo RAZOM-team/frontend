@@ -57,9 +57,9 @@ const AcceptConditions = ({
 
             </label>
 
-            {/* <div className={style.personalization__agreement}>
+            <div className={style.personalization__agreement}>
               Даю згоду на контакт зі мною для затвердження прийняття заявки
-            </div> */}
+            </div>
           </div>
         )}
 

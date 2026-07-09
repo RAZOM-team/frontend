@@ -1,0 +1,18 @@
+@use '../../styles/mixins.module' as mixins;
+
+.personalization {
+  &__errorWrapper {
+    margin-top: 8px;
+    align-items: center;
+    display: flex;
+    gap: 4px;
+  }
+
+  &__error {
+    @include mixins.font-standart-size-16;
+
+    display: block;
+    line-height: 140%;
+    color: #9d0208;
+  }
+}

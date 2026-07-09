@@ -14,6 +14,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 8px;
     position: absolute;
     bottom: 105px;
     margin: 0 16px;
@@ -23,6 +24,7 @@
     display: flex;
     flex-direction: row;
     align-items: center;
+    width: 100%;
   }
 
   &__buttonAxcept {
@@ -55,7 +57,7 @@
     line-height: 140%;
     letter-spacing: 0;
     color: #212529;
-    
+
     &__confidential {
       white-space: nowrap;
       text-decoration: underline;

@@ -7,13 +7,15 @@ type Props = {
   isClicked?: boolean;
   pathPart?: string;
   content?: string;
+  form?: string;
 }
 
 const FurtherButton = ({
   pathPart,
   disabled,
   isClicked = false,
-  content
+  content,
+  form
 }: Props) => {
   const inscription = useMemo(() => {
     if (content) {
@@ -27,6 +29,7 @@ const FurtherButton = ({
     <>
       <button
         type="submit"
+        form={form || undefined}
         onClick={() => { }}
         className={cn(styles.further__button, {
           [styles.further__buttonGoToMainPage]: pathPart === '',

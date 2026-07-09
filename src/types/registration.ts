@@ -15,8 +15,8 @@ export type DataMember = {
 }
 
 export type VolunteerResponses = {
-  yourHelp: '',
-  freeHours: '',
+  yourHelp: string,
+  freeHours: string,
   agreeWorkForFree: boolean | undefined,
 }
 

@@ -385,7 +385,6 @@ const RegisterForm = ({ joinAs, status, initialData }: Props) => {
             </label>
           </div>
 
-
           <FurtherButton
             pathPart={truthPath}
             disabled={isDisabled}

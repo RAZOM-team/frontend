@@ -60,7 +60,7 @@ const Personalization = () => {
       return;
     }
 
-    // sessionStorage.removeItem('register_user_data');
+    sessionStorage.removeItem('register_user_data');
 
     setIsClicked(true);
 

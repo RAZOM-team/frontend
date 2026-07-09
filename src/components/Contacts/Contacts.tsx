@@ -1,7 +1,7 @@
 import styles from './Contacts.module.scss';
 import BlackVector from '../../assets/icons/Vector-black.svg';
 import instagramIcon from '../../assets/icons/instagram-icon.svg';
-import cellPhone from '../../assets/black-icons/Call.svg';
+import cellPhone from '../../assets/black-icons/call.svg';
 import TopBar from '../TopBar/TopBar';
 import cn from 'classnames';
 import { useEffect, useState } from 'react';

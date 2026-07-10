@@ -13,6 +13,7 @@ import OverviewPoject from './components/OverviewPoject/OverviewPoject.tsx';
 import Contacts from './components/Contacts/Contacts.tsx';
 import GoToTheEvent from './components/GoToTheEvent/GoToTheEvent.tsx';
 import AboutUsPage from './components/AboutUsPage/AboutUsPage.tsx';
+import SupportRazom from './components/SupportRazom/SupportRazom.tsx';
 
 export type UserInfo = {
   firstName: string,
@@ -91,6 +92,8 @@ function App() {
         <Route path='/overviewPoject' element={<OverviewPoject />} />
         <Route path='/contacts' element={<Contacts />} />
         <Route path='/about-us' element={<AboutUsPage />} />
+
+        <Route path='/support' element={<SupportRazom />} />
       </Routes>
     </>
   );

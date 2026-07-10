@@ -1,0 +1,105 @@
+@use '../../styles/mixins.module' as mixins;
+
+.support {
+  &__mainContent {
+    margin-inline: 16px;
+  }
+
+  &__describe {
+    margin-block: 16px 40px;
+    color: #495057;
+    line-height: 140%;
+
+    @include mixins.font-standart-size-16;
+
+    &__1 {
+      margin-block: 40px;
+    }
+  }
+
+  &__title {
+    color: #000;
+
+    @include mixins.font-standart-size-32;
+  }
+
+  &__toSupport {
+    display: block;
+    background: linear-gradient(rgba(21, 25, 29, 0.55), rgba(21, 25, 29, 0.55));
+    text-decoration: none;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    text-decoration: none;
+    width: auto;
+    height: 252px;
+    border-radius: 4px;
+    position: relative;
+  }
+
+  &__volunteerHeading {
+    padding-top: 24px;
+    margin-inline: 24px;
+    
+    &__1 {
+      padding-bottom: 16px;
+      color: #f8f9fa;
+      text-align: start;
+      font-family: 'Manrope', sans-serif;
+      font-weight: 400;
+      font-size: 24px;
+      line-height: 120%;
+      letter-spacing: 0;
+    }
+  }
+
+  &__donateImage {
+    width: 40px;
+    height: 40px;
+    margin-left: 70px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin-right: 70px;
+    margin-bottom: 70px;
+  }
+
+  &__score {
+    border: 1px solid #dee2e6;
+    border-radius: 4px;
+    text-align: left;
+    padding-inline: 24px;
+    margin-bottom: 40px;
+  }
+
+  &__scoreTitle {
+    @include mixins.font-standart-size-24;
+
+    color: #000;
+    line-height: 120%;
+    padding-block: 24px 16px;
+  }
+
+  &__receiver, &__iban, &__bic {
+    @include mixins.font-standart-size-16;
+  
+    color: #212529;
+    margin-block: 16px;
+  }
+
+  &__data{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 4px;
+
+    & span {
+      color: #495057;
+    }
+  }
+
+  &__copy {
+    width: 24px;
+    height: 24px;
+  }
+}

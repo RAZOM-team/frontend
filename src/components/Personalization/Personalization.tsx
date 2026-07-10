@@ -61,6 +61,7 @@ const Personalization = () => {
     }
 
     sessionStorage.removeItem('register_user_data');
+    sessionStorage.removeItem('register_user_interests');
 
     setIsClicked(true);
 

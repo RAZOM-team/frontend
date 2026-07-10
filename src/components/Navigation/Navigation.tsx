@@ -44,7 +44,7 @@ const Navigation = ({ openedMenu, setIsOpenMenu }: Props) => {
   },
   {
     item: t("Підтримати RAZOM!"),
-    to: "/getVolunteer",
+    to: "/support",
   },
   ];
 

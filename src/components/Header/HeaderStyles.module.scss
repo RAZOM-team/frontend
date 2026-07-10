@@ -1,6 +1,10 @@
 .header {
   background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)),
     url('../../assets/background_header.png');
+
+  // background-image: url('../../assets/background_header.png');
+  // background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55));
+
   background-position: center;
   background-repeat: no-repeat;
   background-size: 180%;
@@ -8,9 +12,11 @@
   width: 100%;
 
   &__none {
-    background-color: #2125298C;
+    background-image:
+      linear-gradient(rgba(21, 25, 29, 0.81), rgba(21, 25, 29, 0.81)),
+      url('../../assets/background_header.png');
+
     pointer-events: none;
-    position: relative;
   }
 
   &__nav {

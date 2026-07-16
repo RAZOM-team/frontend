@@ -43,14 +43,19 @@ const AboutUsPage = () => {
               та терапевтичні сесії, які зміцнюють нашу спільноту та допомагають краще знати свої права.
             </p>
           </details>
+
           <div className={styles.aboutUs__devideLine}></div>
+
           <details className={styles.aboutUs__nameWrapper}>
             <summary className={styles.aboutUs__name}>Світогляд <span></span></summary>
+           
             <p className={styles.aboutUs__info}>
               Ми хочемо надавати актуальну інформацію про права ЛГБТКІ+, а також пропонуємо лекції, семінари
               та терапевтичні сесії, які зміцнюють нашу спільноту та допомагають краще знати свої права.
             </p>
+          
           </details>
+
           <div className={styles.aboutUs__devideLine}></div>
         </div>
 

@@ -40,7 +40,7 @@ const Navigation = ({ openedMenu, setIsOpenMenu }: Props) => {
   },
   {
     item: t("Контакти"),
-    to: "/contacts", // /contacts
+    to: "/contacts",
   },
   {
     item: t("Підтримати RAZOM!"),
@@ -54,16 +54,21 @@ const Navigation = ({ openedMenu, setIsOpenMenu }: Props) => {
     setSelectedItem(itemNames);
 
     console.log(selectedItem);
+    console.log(targetUrl.startsWith('/#'));
 
     setTimeout(() => {
-      if (targetUrl.startsWith('#')) {
-        const element = document.querySelector(targetUrl);
+      if (targetUrl.startsWith('/#')) {
+        const element = document.querySelector(targetUrl.slice(1));
+
+        console.log(element);
+
         element?.scrollIntoView({ behavior: 'smooth' });
       } else {
         window.location.href = targetUrl;
-        closeMenu({ setIsOpenMenu });
       }
-    }, 480);
+
+      closeMenu({ setIsOpenMenu });
+    }, 1480);
   };
 
   return (

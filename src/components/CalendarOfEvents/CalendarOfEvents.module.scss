@@ -7,6 +7,10 @@
     letter-spacing: 0;
     margin-bottom: 24px;
     color: #212529;
+
+    &--inFlow {
+      margin-top: 64px;
+    }
   }
 
   &__topics {
@@ -114,11 +118,11 @@
 
       &::after {
         content: '';
-        position: absolute;
-        left: 0;
-        bottom: -4px;
 
-        width: 100%;
+        position: absolute;
+        bottom: 9px;
+
+        width: 24px;
         height: 2px;
         background-color: #cb6ce6;
         border-radius: 2px;
@@ -132,6 +136,7 @@
   }
 
   &__day {
+    display: block;
     &_outside {
       color: #ced4da;
     }

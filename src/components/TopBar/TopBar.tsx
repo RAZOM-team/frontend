@@ -28,7 +28,10 @@ const TopBar = ({ setIsOpenMenu, isBlack = false, isOpen = false }: Props) => {
     console.log('isClick');
 
     if (setIsOpenMenu) {
-      setIsOpenMenu((curr) => !curr)
+      setIsOpenMenu((curr) => !curr);
+
+      setTimeout(() => {
+      }, 480);
     }
   };
 

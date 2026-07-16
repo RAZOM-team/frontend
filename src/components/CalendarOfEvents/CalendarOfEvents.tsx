@@ -17,19 +17,16 @@ import { useMemo, useState } from 'react';
 import cn from 'classnames';
 import { useTranslation } from 'react-i18next';
 import useLang from '../TopBar/useLang';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
-import 'swiper/css/scrollbar';
 import type { eventsInfo } from '../../types/dataInfo';
 import ViewEvent from '../ViewEvent/ViewEvent';
+import CalendarTopics from './CalendarTopics/CalendarTopics';
 
 type Props = {
   data: eventsInfo[] | [],
+  isFlow?: boolean;
 }
 
-const CalendarOfEvents = ({ data }: Props) => {
+const CalendarOfEvents = ({ data, isFlow = false }: Props) => {
   const today = startOfToday();
   const [activeDate, setActiveDate] = useState(today);
   const { t } = useTranslation();
@@ -71,38 +68,12 @@ const CalendarOfEvents = ({ data }: Props) => {
   return (
     <>
       <section className={stylesCalendarOfEvents.calendar}>
-        <h1 className={stylesCalendarOfEvents.calendar__title}>{t('calendarTitle')}</h1>
+        <h1 className={cn(stylesCalendarOfEvents.calendar__title, {
+          [stylesCalendarOfEvents['calendar__title--inFlow']]: isFlow,
+        })}>{t('calendarTitle')}</h1>
 
         <div className={stylesCalendarOfEvents.calendar__topics}>
-          <Swiper
-            spaceBetween={16}
-            slidesPerView={'auto'}
-          >
-            <SwiperSlide className={stylesCalendarOfEvents.calendar__slide}>
-              <button className={stylesCalendarOfEvents.calendar__category}>{t('categoryAll')}</button>
-            </SwiperSlide>
-
-            <SwiperSlide className={stylesCalendarOfEvents.calendar__slide}>
-              <button className={stylesCalendarOfEvents.calendar__category}>{t('categoryInfo')}</button>
-            </SwiperSlide>
-
-            <SwiperSlide className={stylesCalendarOfEvents.calendar__slide}>
-              <button className={stylesCalendarOfEvents.calendar__category}>{t('categorySocial')}</button>
-            </SwiperSlide>
-
-            <SwiperSlide className={stylesCalendarOfEvents.calendar__slide}>
-              <button className={stylesCalendarOfEvents.calendar__category}>{t('categoryActivism')}</button>
-            </SwiperSlide>
-
-            <SwiperSlide className={stylesCalendarOfEvents.calendar__slide}>
-              <button className={stylesCalendarOfEvents.calendar__category}>{t('categoryCultural')}</button>
-            </SwiperSlide>
-
-            <SwiperSlide className={stylesCalendarOfEvents.calendar__slide}>
-              <button className={stylesCalendarOfEvents.calendar__category}>{t('categoryPsychological')}</button>
-            </SwiperSlide>
-
-          </Swiper>
+          <CalendarTopics />
         </div>
 
         <div className={stylesCalendarOfEvents.calendar__header}>

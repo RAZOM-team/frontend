@@ -4,9 +4,11 @@ interface Props {
   setIsOpenMenu?: Dispatch<SetStateAction<boolean>>;
 }
 
-const closeMenu = ({setIsOpenMenu}: Props) => {
+async function closeMenu({setIsOpenMenu}: Props) {
   if (setIsOpenMenu) {
-    setIsOpenMenu(false)
+    setTimeout(() => {
+      setIsOpenMenu(false);
+    }, 100);
   }
 };
 

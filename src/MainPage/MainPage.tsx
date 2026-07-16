@@ -28,7 +28,7 @@ const MainPage = () => {
 
       <main>
         <div id="calendar">
-          <CalendarOfEvents data={eventsData} />
+          <CalendarOfEvents data={eventsData} isFlow={true} />
         </div>
 
         <AboutUs />

@@ -28,7 +28,12 @@ const Header = () => {
       )} id='header'>
         {isOpenMenu &&
           <div className={headerStyles.header__nav}>
-            <TopBar setIsOpenMenu={setIsOpenMenu} isBlack={isOpenMenu} />
+            <TopBar
+              setIsOpenMenu={setIsOpenMenu}
+              isBlack={isOpenMenu}
+              isOpen={true}
+            />
+
             <Navigation openedMenu={true} setIsOpenMenu={setIsOpenMenu} />
           </div>
         }

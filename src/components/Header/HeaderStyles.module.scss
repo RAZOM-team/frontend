@@ -7,7 +7,35 @@
 
   background-position: center;
   background-repeat: no-repeat;
-  background-size: 180%;
+
+  @media (min-width: 393px) {
+    background-size: 180%;
+  }
+
+  @media (min-width: 768px) {
+    background-size: 100%;
+  }
+
+  @media (min-width: 1280px) {
+    background-size: 100%;
+    background-image: none;
+  }
+
+  &__wrapper {
+    @media (min-width: 1280px) {
+      margin: 0 48px 48px 48px;
+      background-size: 100%;
+
+      background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)),
+        url('../../assets/background_header.png');
+
+      background-position: center;
+      background-repeat: no-repeat;
+      height: 704px;
+      border-radius: 8px;
+    }
+  }
+
   height: 100vh;
   width: 100%;
 
@@ -43,6 +71,19 @@
     overflow-wrap: break-word;
     word-wrap: break-word;
     margin-bottom: 8px;
+
+    @media (min-width: 1280px) {
+      margin: 0;
+      white-space: pre-line;
+      text-align: left;
+      padding-top: 48px;
+      padding-left: 48px;
+      font-size: 96px;
+    }
+  }
+
+  &__elementsWrapper {
+    margin-inline: 16px;
   }
 
   &__grapheme {
@@ -71,9 +112,15 @@
 &__title {
   font-family: 'Manrope', sans-serif;
   margin-block: 56px 36px;
+  font-size: 24px;
+
+  @media (min-width: 1280px) {
+    margin-block: 198px 24px;
+    font-size: 48px;
+  }
+
   color: #f8f9fa;
   font-weight: 400;
-  font-size: 24px;
   line-height: 120%;
   letter-spacing: 0;
 }
@@ -81,13 +128,25 @@
 &__join {
   color: #212529;
   background-color: #7eda57;
-  padding: 12px 107px;
+  padding: 12px;
+  width: 100%;
+  font-size: 18px;
+
+  @media (min-width: 1280px) {
+    width: 361px;
+    font-size: 20px;
+  }
+
+  height: 49px;
   border: none;
   border-radius: 8px;
-  font-family: 'Manrope', sans-serif;
+  font-family: 'Manrope',
+  sans-serif;
   font-weight: 400;
-  font-size: 18px;
   line-height: 140%;
   letter-spacing: 0;
+
+  cursor: pointer;
+  text-align: center;
 }
 }

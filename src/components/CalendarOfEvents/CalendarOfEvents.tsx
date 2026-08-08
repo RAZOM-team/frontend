@@ -4,12 +4,10 @@ import {
   startOfWeek,
   endOfWeek,
   eachDayOfInterval,
-  isSameDay,
   format,
   addMonths,
   subMonths,
   startOfToday,
-  isSameMonth,
 } from 'date-fns';
 import { enUS, uk, de } from 'date-fns/locale';
 import stylesCalendarOfEvents from './CalendarOfEvents.module.scss';
@@ -20,6 +18,7 @@ import useLang from '../TopBar/useLang';
 import type { eventsInfo } from '../../types/dataInfo';
 import ViewEvent from '../ViewEvent/ViewEvent';
 import CalendarTopics from './CalendarTopics/CalendarTopics';
+import CalendarMonth from './CalendarMonth/CalendarMonth';
 
 type Props = {
   data: eventsInfo[] | [],
@@ -64,6 +63,7 @@ const CalendarOfEvents = ({ data, isFlow = false }: Props) => {
 
   console.log(activeDate);
   console.log(selectedDay);
+  console.log(days);
 
   return (
     <>
@@ -95,7 +95,7 @@ const CalendarOfEvents = ({ data, isFlow = false }: Props) => {
         </div>
 
         <div className={stylesCalendarOfEvents.calendar__calendarGrid}>
-          {days.map(day => {
+          {/* {days.map(day => {
             const dayEvents = data.filter(event =>
               isSameDay(new Date(event.date), day)
             );
@@ -116,7 +116,14 @@ const CalendarOfEvents = ({ data, isFlow = false }: Props) => {
                 >{day.getDate()}</span>
               </div>
             );
-          })}
+          })} */}
+
+          <CalendarMonth data={data}
+            days={days}
+            selectedDay={selectedDay}
+            setSelectedDay={setSelectedDay}
+            currentMonthStart={currentMonthStart}
+          />
         </div>
       </section>
 

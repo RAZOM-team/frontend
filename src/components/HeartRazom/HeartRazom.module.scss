@@ -6,6 +6,12 @@
     5: '../../assets/kotsar.jpg'
   );
 
+  .swiper-wrapper {
+    width: 10% !important;
+    margin-right: 16px !important;
+    position: fixed !important;
+  }
+
   .heartRazom {
     background-color: #ffdf59;
     margin-top: 40px;
@@ -21,7 +27,7 @@
     }
 
     // &__swiperCards {
-      // width: 361px !important;
+    // width: 361px !important;
     // }
 
     &__cardWrapper {
@@ -98,3 +104,7 @@
       }
     }
   }
+
+.swiper-wrapper {
+  margin: 0 !important;
+}

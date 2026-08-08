@@ -1,0 +1,42 @@
+.calendar {
+  &__dayCell {
+    margin: 0 auto;
+    color: #212529;
+    cursor: pointer;
+
+    width: 43.57px;
+    height: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+
+    &_hasEvent {
+      position: relative;
+
+      &::after {
+        content: '';
+
+        position: absolute;
+        bottom: 9px;
+
+        width: 24px;
+        height: 2px;
+        background-color: #cb6ce6;
+        border-radius: 2px;
+      }
+    }
+
+    &_selected {
+      border: 1px solid #07029d;
+      border-radius: 4px;
+    }
+  }
+
+  &__day {
+    display: block;
+    &_outside {
+      color: #ced4da;
+    }
+  }
+}

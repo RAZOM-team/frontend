@@ -1,4 +1,10 @@
 .calendar {
+  @media (min-width: 768px) {
+    width: 567px;
+    margin: 80px auto 0;
+    border: 1px solid #dee2e6;
+  }
+
   &__title {
     font-family: 'Manrope', sans-serif;
     font-weight: 400;
@@ -83,7 +89,10 @@
     justify-content: center;
     align-items: center;
     width: 43.57px;
-    height: 43.57px;
+    height: 48px;
+  }
+
+  &__weekDays {
     padding-bottom: 8px;
   }
 
@@ -93,8 +102,8 @@
     display: grid;
     grid-template-columns: repeat(7, fit-content(24px));
     margin: 0 auto;
-    gap: 4px;
-    column-gap: 8px;
+    row-gap: 8px;
+    column-gap: 4px;
   }
 
   &__calendarGrid {
